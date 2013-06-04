@@ -1,8 +1,21 @@
-#+TITLE: Tommy Wang
+#+TITLE: Tommy Wang's Home Page
 #+AUTHOR: Tommy Wang
-#+OPTIONS: num:nil toc:t
+#+OPTIONS: num:nil toc:nil
 
-* About
-* Open Source Projects
-* My Pages
+#+HTML_HEAD_EXTRA: <style type="text/css">
+#+HTML_HEAD_EXTRA: <!--/*--><![CDATA[/*><!--*/
+#+HTML_HEAD_EXTRA: h1.title, #table-of-contents h2 { display:none; }
+#+HTML_HEAD_EXTRA: #text-table-of-contents {margin-left: 100px; height:160px; }
+#+HTML_HEAD_EXTRA: #text-table-of-contents ul { list-style-type: none; }
+#+HTML_HEAD_EXTRA: /*]]>*/-->
+#+HTML_HEAD_EXTRA: </style>
 
+
+#+ATTR_HTML: :width 120 :style float:left;
+[[./me.jpg]]
+#+TOC: headlines
+
+* 开源项目
+* 文档
+
+-----
