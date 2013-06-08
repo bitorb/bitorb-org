@@ -25,6 +25,7 @@
 # Top-level generic files
 #
 !.gitignore
+!me.png
 
 # generated dirs
 target

@@ -12,10 +12,20 @@
 
 
 #+ATTR_HTML: :width 120 :style float:left;
-[[./me.jpg]]
-#+TOC: headlines
+[[file:me.depth][file:./me.png]]
+#+TOC: headlines 1
 
-* 开源项目
-* 文档
+* 目前的技术领域
+* 程序与文档
+
+#+begin_src ditaa :file blue.png :cmdline -r
++---------+
+| cBLU    |
+|         |
+|    +----+
+|    |cPNK|
+|    |    |
++----+----+
+#+end_src
 
 -----
