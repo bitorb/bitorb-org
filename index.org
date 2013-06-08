@@ -12,13 +12,13 @@
 
 
 #+ATTR_HTML: :width 120 :style float:left;
-[[file:me.depth][file:./me.png]]
+[[file:images/me.depth][file:./images/me.png]]
 #+TOC: headlines 1
 
 * 目前的技术领域
 * 程序与文档
 
-#+begin_src ditaa :file blue.png :cmdline -r
+#+begin_src ditaa :file images/blue.png :cmdline -r
 +---------+
 | cBLU    |
 |         |
