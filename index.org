@@ -36,15 +36,15 @@
     所有 [[http://maven.apache.org][Maven]] 结构的项目的根。我所有的 Maven 项目都需要继承它，最后发布到 [[http://repo1.maven.org/maven2/org/gaixie/][Maven 中心仓库]]。
   + [[https://github.com/bitorb/jibu][jibu]] : 
     一个基于 [[http://code.google.com/p/google-guice/][Guice]] 和 [[http://www.sencha.com/products/extjs/][ExtJS]] 的超轻量级开源框架，已经成功应用到多个项目，可以从 [[http://repo1.maven.org/maven2/org/gaixie/jibu/assemblies/jibu/][这里下载]] 最新的编译好的打包文件。 
-  + [[http://github.com/bitorb/jibu-doc][jibu-doc ]]: 
+  + [[http://github.com/bitorb/jibu-doc][jibu-doc]] : 
     以 [[http://docbook.org][Docbook]] 格式编写的 Jibu 项目文档源码。
   + [[http://code.google.com/p/bito/][bito]] : 
     我的 Blog 使用的 WordPress 主题。
-  + [[http://code.google.com/p/gaixie-org/][gaixie-org ]]: 
+  + [[http://code.google.com/p/gaixie-org/][gaixie-org]] : 
     Gaixie.ORG 网站静态页面，定期以 git pull 方式自动进行网站更新。
   + [[http://code.google.com/p/bitorb/][bitorb]] : 
     我自己的 Linux 和 Mac OS X 的相关配置文件及脚本，主要是为了重装机器方便。
-  + [[http://github.com/bitorb/bitorb-org][bitorb-org ]]: 
+  + [[http://github.com/bitorb/bitorb-org][bitorb-org]] : 
     我个人主页的源码，用 [[http://orgmode.org][Emacs Orgmode]] 编写，导出后以 rsync 方式不定期手动更新。
 
 
