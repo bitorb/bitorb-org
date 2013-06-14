@@ -48,4 +48,4 @@
     我个人主页的源码，用 [[http://orgmode.org][Emacs Orgmode]] 编写，导出后以 rsync 方式不定期手动更新。
 
 
-  -----
+  一些篇幅不是特别长，并需要长期维护的文档，我喜欢用 [[http://orgmode.org][Emacs Orgmode]] 格式编写，查看它们导出后的 html 页面 [[./docs/index.org][从这里进入]]。

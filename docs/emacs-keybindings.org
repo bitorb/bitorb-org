@@ -1,0 +1,16 @@
+#+TITLE: Emacs Key Bindings
+#+AUTHOR: Tommy Wang
+
+| keys  | scope  | function       | description |
+|-------+--------+----------------+-------------|
+|       |        |                |             |
+|-------+--------+----------------+-------------|
+| C-c l | global | org-store-link |             |
+| C-c c | global | org-capture    |             |
+
+
+  
+
+
+
+
