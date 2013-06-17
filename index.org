@@ -21,7 +21,7 @@
   + 最常用的网名是 bitorb, 工作中有时会使用我的英文名 Tommy。
   + 我的 Mail : bitorb AT gmail DOT com，我在网络社交方面比较保守，几乎不用微博、微信、QQ 等应用。
   + 我的 Blog : [[http://blogs.gaixie.org/tommy][Tommy's Blog]]
-  + 我的 GPG Key Fingerprint : [[http://pgp.mit.edu:11371/pks/lookup?search%3D0xA565F2C2&op%3Dindex][573F C15E B6A4 8432 EA49   FA77 E05C CC56 A565 F2C2]]
+  + 我的 GPG Key Fingerprint : [[http://pgp.mit.edu:11371/pks/lookup?search%3D0xA565F2C2&amp%3Bop%3Dindex][573F C15E B6A4 8432 EA49   FA77 E05C CC56 A565 F2C2]]
 
 
 本站的部分外链有时可能无法正常访问，希望你有点崂山道士的本领，我甚至觉得这是目前国内技术同行必须掌握的一项基本技能。
