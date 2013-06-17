@@ -2,7 +2,9 @@
 #+AUTHOR: Tommy Wang
 #+OPTIONS: num:nil toc:nil
 
+* System
+  + [[./system-software.org][常用软件的安装与配置]]
 * Emacs
-  + [[./emacs-keybindings.org][Emacs Key Bindings - Emacs 快捷键]]
+  + [[./emacs-keybindings.org][Emacs 常用快捷键]]
 
 
