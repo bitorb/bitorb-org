@@ -1,6 +1,59 @@
 #+TITLE: Software Installation
 #+AUTHOR: Tommy Wang
 
+* Emacs
+** Emacs 编译安装
+   作为我使用频率最高的软件，版本升级一定要及时，但从国内 clone 源码库实在是太慢了，只能通过下载最新的源码包进行编译安装。
+   如果之前有通过 yum 安装过 Emacs， 要把它先卸载掉，然后从国内的镜像站下载源码包到 /usr/local/src 目录下，并解压缩。
+#+BEGIN_SRC 
+$ sudo yum erase emacs
+$ cd /usr/local/src
+$ sudo wget http://mirror.bjtu.edu.cn/gnu/emacs/emacs-24.3.tar.gz
+$ sudo tar xzvf emacs-24.3.tar.gz 
+#+END_SRC
+   安装一些编译依赖的软件包，我目前使用的只是 Emacs 的大众功能，所以只要求能成功编译就行。
+#+BEGIN_SRC 
+$ sudo yum groupinstall "Development Tools"
+$ sudo yum install gtk+-devel gtk2-devel
+$ sudo yum install libXpm-devel libpng-devel giflib-devel libtiff-devel libjpeg-devel
+$ sudo yum install ncurses-devel
+#+END_SRC
+   下面进入解压缩后的源码目录，开始编译，安装，最后做一个执行文件的软链接。
+#+BEGIN_SRC 
+$ cd /usr/local/src/emacs-24.3
+$ sudo mkdir /usr/local/emacs
+$ sudo ./configure --prefix=/usr/local/emacs/24.3
+$ sudo make install
+$ sudo ln -sf /usr/local/emacs/24.3/bin/emacs /usr/local/bin/emacs
+#+END_SRC
+   以上是 Fedora 下 Emacs 编译安装过程，Mac OSX 我直接从 [[http://emacsformacosx.com/]] 下载最新的 dmg 文件安装。
+   这个网站的版本更新相当及时，大家评价很高。
+
+** Orgmode 编译安装
+   下面的操作 Linux 和 Mac OSX 没有区别，先在 ~/Projects/others/ 目录下 clone 最新的源码，注意不要修改
+   这个路径，它已经被写死到 [[http://code.google.com/p/bitorb/source/browse/dot.emacs.d/init-org.el][init-org.el]] 配置文件中了。
+#+BEGIN_SRC 
+$ cd ~/Projects/others/
+$ git clone git://orgmode.org/org-mode.git
+$ cd org-mode/
+$ make autoloads
+#+END_SRC
+
+** Emacs 配置
+   在前面 Emacs 及各种模式安装完成后，最后做的是 Emacs 配置，Linux 和 Mac OSX 没有区别，还是通过目录软链接的方式，
+   注意如果之前有 ~/.emacs.d 目录或者是 ~/.emacs 文件，备份一下，直接删掉，我所有的配置都在  [[http://code.google.com/p/bitorb/source/checkout][bitorb 项目]] 中。
+#+BEGIN_SRC 
+$ ln -sf ~/Projects/gaixie/bitorb/dot.emacs.d/ ~/.emacs.d
+#+END_SRC
+
+   到这里位置，Emacs 的配置就结束了，进入 Emacs，并检查相关的版本是否正确。
+#+BEGIN_SRC 
+$ emacs
+
+M-x version
+M-x org-version
+#+END_SRC
+
 * Thunderbird
   选择 Thunderbird 作为我的邮件客户端的主要原因是它可以同时安装在 Linux 和 Mac OSX 上，相互的数据迁移与恢复比较方便。
   而且这货目前市场占有率那么高，稳定性和易用性应该也不是问题。首先去 [[http://www.mozilla.org/zh-CN/thunderbird/][官网下载]] 相应的版本。
@@ -10,14 +63,14 @@
 $ sudo mkdir /usr/local/thunderbird
 $ sudo tar xvf thunderbird-17.0.6.tar.bz2 -C /usr/local/thunderbird/
 $ sudo mv /usr/local/thunderbird/thunderbird/ /usr/local/thunderbird/17.0.6
-$ sudo ln -s /usr/local/thunderbird/17.0.6/thunderbird /usr/local/bin/thunderbird
-$ sudo ln -s /usr/local/thunderbird/17.0.6/chrome/icons/default/default256.png /usr/share/pixmaps/thunderbird.png
+$ sudo ln -sf /usr/local/thunderbird/17.0.6/thunderbird /usr/local/bin/thunderbird
+$ sudo ln -sf /usr/local/thunderbird/17.0.6/chrome/icons/default/default256.png /usr/share/pixmaps/thunderbird.png
 #+END_SRC
   上面是我习惯的安装目录，为了以后装新版本方便，做一个软链接到 /usr/local/bin。图标的软链接是为了 GNOME 3 下的桌面图标用的。
   然后要在 ./local/share/applications 目录下创建一个 [[http://code.google.com/p/bitorb/source/browse/dot.local/share/applications/mozilla-thunderbird.desktop][mozilla-thunderbird.desktop]] 文件。这个文件我已经通过 [[http://code.google.com/p/bitorb/source/checkout][bitorb 项目]] clone 
   到我的本地了，只要做一下目录链接。注意如果 applications 目录已存在，要删除掉。如果已做软链接，就不用执行下面的语句。
 #+BEGIN_SRC 
-$ ln -s ~/Projects/gaixie/bitorb/dot.local/share/applications/ ~/.local/share/applications
+$ ln -sf ~/Projects/gaixie/bitorb/dot.local/share/applications/ ~/.local/share/applications
 #+END_SRC
   最后通过 ALT+F2 r 刷新 gnome，就可以看到 Thunderbird 的启动图标了。启动后会创建一个 ~/.thunderbird 配置目录，把之前备份的
   数据文件恢复过来，要先把 thunderbird 停掉。
