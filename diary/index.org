@@ -5,10 +5,8 @@
 #+HTML_HEAD_EXTRA: <style type="text/css">
 #+HTML_HEAD_EXTRA: <!--/*--><![CDATA[/*><!--*/
 #+HTML_HEAD_EXTRA: #table-of-contents h2 { display:none; }
-#+HTML_HEAD_EXTRA: #text-table-of-contents ul { list-style-type: none; }
 #+HTML_HEAD_EXTRA: /*]]>*/-->
 #+HTML_HEAD_EXTRA: </style>
-
 
 * 再见了 Wordpress!
   <2013-06-19 Wed>
