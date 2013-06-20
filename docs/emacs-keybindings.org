@@ -7,12 +7,18 @@
 |-------------+----------+-------------------------------------+---------------------------------------------------------------------|
 | C-h b       | global   | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Misc-Help.html][describe-bindings]]                   | 列出所有已定义的快捷键                                              |
 | C-@         | global   | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Setting-Mark.html][set-mark-command]]                    | 标记点的位置，另一个同样功能的热键 C-SPC 中文环境下被操作系统占用了 |
+| C-x h       | global   | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Marking-Objects.html][mark-whole-buffer]]                   | 当前 buffer 中所有内容全部选中                                      |
 | C-x +       | global   | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Change-Window.html][balance-windows]]                     | 将窗口变为相同的大小                                                |
 | C-x -       | global   | shrink-window-if-larger-than-buffer | 缩小窗口以适合 buffer 中显示的内容                                  |
+| C-x ^       | global   | enlarge-window                      | 当前窗口变高一行，C-u - 2 C-x ^ 表示当前窗口变低两行                |
+| C-x }       | global   | enlarge-window-horizontally         | 当前窗口变宽一列                                                    |
+| C-x {       | global   | shrink-window-horizontally          | 当前窗口变窄一列                                                    |
 | C-x 0       | global   | delete-window                       | 删除当前窗口                                                        |
 | C-x 1       | global   | delete-other-windows                | 删除其它窗口，只保留当前窗口                                        |
 | C-x 2       | global   | split-window-below                  | 将当前窗口上下平均分割窗口                                          |
 | C-x 3       | global   | split-window-right                  | 将当前窗口左右平均分割窗口                                          |
+| C-M-\       | global   | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Indentation-Commands.html#Indentation-Commands][indent-region]]                       | 对选择的 region 进行缩进                                            |
+| C-M-q       | global   |                                     | 括号分组内进行缩进，光标必须在起始括号所在行上                      |
 | M-%         | global   | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Query-Replace.html][query-replace]]                       | 逐个替换匹配到的字符串                                              |
 |-------------+----------+-------------------------------------+---------------------------------------------------------------------|
 | C-c <left>  | global   | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Window-Convenience.html][winner-undo]]                         | undo 到上一个窗口配置                                               |
