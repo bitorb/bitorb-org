@@ -1,14 +1,25 @@
 #+TITLE: Emacs Key Bindings
 #+AUTHOR: Tommy Wang
 
-| keys   | scope    | function       | description                                                       |
-|--------+----------+----------------+-------------------------------------------------------------------|
-|        |          |                |                                                                   |
-|--------+----------+----------------+-------------------------------------------------------------------|
-| C-c l  | global   | org-store-link | 把当前文件存为一个链接，可以在其它 buffer 中 C-c C-l 来插入此链接 |
-| C-c c  | global   | org-capture    | 几乎不用打断当前的工作，快速的记录一个想法或信息到制定的文件      |
-| C-c a  | global   | org-agenda     | 打开日程命令 buffer                                               |
-| C-c b  | global   | org-iswitchb   | 在多个 org buffer 中切换                                          |
-|--------+----------+----------------+-------------------------------------------------------------------|
-| <s TAB | org-mode |                | 文本中输入自动生成 SRC 代码块                                     |
-| <e TAB | org-mode |                | 文本中输入自动生成 EXAMPLE 代码块                                 |
+| keys        | scope    | function                            | description                                                         |
+|-------------+----------+-------------------------------------+---------------------------------------------------------------------|
+| C-h b       | global   | describe-bindings                   | 列出所有已定义的快捷键                                              |
+| C-@         | global   | set-mark-command                    | 标记点的位置，另一个同样功能的热键 C-SPC 中文环境下被操作系统占用了 |
+| C-x +       | global   | balance-windows                     | 将窗口变为相同的大小                                                |
+| C-x -       | global   | shrink-window-if-larger-than-buffer | 缩小窗口以适合 buffer 中显示的内容                                  |
+| C-x 0       | global   | delete-window                       | 删除当前窗口                                                        |
+| C-x 1       | global   | delete-other-windows                | 删除其它窗口，只保留当前窗口                                        |
+| C-x 2       | global   | split-window-below                  | 将当前窗口上下平均分割窗口                                          |
+| C-x 3       | global   | split-window-right                  | 将当前窗口左右平均分割窗口                                          |
+|-------------+----------+-------------------------------------+---------------------------------------------------------------------|
+| C-c <left>  | global   | winner-undo                         | undo 到上一个窗口配置                                               |
+| C-c <right> | global   | winner-redo                         | redo 到下一个窗口配置                                               |
+|-------------+----------+-------------------------------------+---------------------------------------------------------------------|
+| C-c a       | global   | org-agenda                          | 打开日程命令 buffer                                                 |
+| C-c b       | global   | org-iswitchb                        | 在多个 org buffer 中切换                                            |
+| C-c c       | global   | org-capture                         | 几乎不用打断当前的工作，快速的记录一个想法或信息到制定的文件        |
+| C-c l       | global   | org-store-link                      | 把当前文件存为一个链接，可以在其它 buffer 中 C-c C-l 来插入此链接   |
+|-------------+----------+-------------------------------------+---------------------------------------------------------------------|
+| <e TAB      | org-mode |                                     | 文本中输入自动生成 EXAMPLE 代码块                                   |
+| <s TAB      | org-mode |                                     | 文本中输入自动生成 SRC 代码块                                       |
+| C-c .       | org-mode | org-time-stamp                      | 插入一个日期                                                        |
