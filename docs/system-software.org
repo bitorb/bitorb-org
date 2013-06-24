@@ -1,4 +1,4 @@
-#+TITLE: Software Installation
+p#+TITLE: Software Installation
 #+AUTHOR: Tommy Wang
 
 * Emacs
@@ -79,3 +79,35 @@ $ rm -rf ~/.thunderbird/xxxxxxxx.default/*
 $ cp -rf ~/backup/yyyyyyyy/default/* ~/.thunderbird/xxxxxxxx.default/
 #+END_EXAMPLE
   Mac OSX 下的安装就简单很多了，直接通过 dmg 文件安装。不用做任何软链接，唯一要注意的是它的配置目录在 ~/Library/Thunderbird 下。
+
+* Fossil
+  Linux 和 Mac OSX 都采用源码编译方式安装，先从 [[http://www.fossil-scm.org/download.html][官网下载]] 最新的源码包，编译后得到 fossil 可执行文件 ，直接复制到 /usr/local/bin 目录下，
+  因为只有一个文件，就不做软链接了。
+#+BEGIN_EXAMPLE
+$ tar xvf fossil-src-20130618210923.tar
+$ cd fossil-src-20130618210923
+$ ./configure --with-openssl=none
+$ make
+$ sudo mv fossil /usr/local/bin
+#+END_EXAMPLE
+  Linux 不配置 cgi，只通过 fossil ui 或者是 fossil server 来提供对外服务。 
+  下面的配置都是针对 Mac OSX 环境。首先在 /Library/WebServer/CGI-Executables 目录创建如下内容的 fsl.cgi 文件。
+#+BEGIN_EXAMPLE
+#!/usr/local/bin/fossil
+directory: /Users/tommy/Projects/fossils
+notfound: http://localhost/cgi-bin/fsl.cgi/tommy
+#+END_EXAMPLE
+  创建一个仓库目录 ~/Projects/fossils，并设置权限让 _www 用户可写。
+#+BEGIN_EXAMPLE
+$ mkdir ~/Projects/fossils
+$ sudo chown tommy:_www ~/Projects/fossils
+$ sudo chmod 775 ~/Projects/fossils
+
+# 克隆我的远程仓库
+$ cd ~/Projects/fossils
+$ fossil clone http://user:password@x.x.x.x:8080/index tommy.fossil
+$ chmod 664 tommy.fossil
+#+END_EXAMPLE
+  参考资料：
+  + [[http://www.editrocket.com/articles/perl_apache_mac.html][Running Perl CGI on the Mac OS X Apache Web Server]]
+  + [[http://bitorb.wordpress.com/2013/06/05/centos-%E4%B8%8B%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85-fossil-%E5%85%AC%E5%85%B1%E5%BA%93/][CentOS 下配置安装 Fossil 公共库]]
