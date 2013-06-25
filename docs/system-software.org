@@ -2,7 +2,13 @@
 #+AUTHOR: Tommy Wang
 
 * Java
-  Linux 下我是通过软链接的方式来切换不同的 JDK 和 JRE 版本。
+  Linux 下我是通过软链接的方式来切换不同的 JDK 和 JRE 版本，[[http://www.oracle.com/technetwork/java/javase/downloads/index.html][官网下载]] 相应的版本（通常是 x64 版本）到 /usr/java 目录下。
+#+BEGIN_EXAMPLE
+$ sudo mv ~/Downloads/jdk-7u25-linux-x64.tar.gz /usr/java/
+$ cd /usr/java
+$ sudo tar xzvf jdk-7u25-linux-x64.tar.gz
+$ sudo ln -sf /usr/java/jdk1.7.0_25/ /usr/java/default
+#+END_EXAMPLE
   Mac OSX 下只需 [[http://www.oracle.com/technetwork/java/javase/downloads/index.html][官网下载]] 相应的 dmg 文件，然后按官方的安装教程进行安装，详细过程见参考文档。安装完成后，使用 java_home 命令运行其它的 JDK 版本：
 #+BEGIN_EXAMPLE
 $ java -version
