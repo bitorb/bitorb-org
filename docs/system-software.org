@@ -1,5 +1,24 @@
-p#+TITLE: Software Installation
+#+TITLE: Software Installation
 #+AUTHOR: Tommy Wang
+
+* Java
+  Linux 下我是通过软链接的方式来切换不同的 JDK 和 JRE 版本。
+  Mac OSX 下只需 [[http://www.oracle.com/technetwork/java/javase/downloads/index.html][官网下载]] 相应的 dmg 文件，然后按官方的安装教程进行安装，详细过程见参考文档。安装完成后，使用 java_home 命令运行其它的 JDK 版本：
+#+BEGIN_EXAMPLE
+$ java -version
+java version "1.7.0_25"
+Java(TM) SE Runtime Environment (build 1.7.0_25-b15)
+Java HotSpot(TM) 64-Bit Server VM (build 23.25-b01, mixed mode)
+
+$ /usr/libexec/java_home -v 1.7.0_07 --exec javac -version
+#+END_EXAMPLE
+  通过下面语句删除无用的版本：
+#+BEGIN_EXAMPLE
+$ cd /Library/Java/JavaVirtualMachines/
+$ sudo rm -rf jdk1.7.0_07.jdk/
+#+END_EXAMPLE
+  参考文档：
+  + [[http://docs.oracle.com/javase/7/docs/webnotes/install/mac/mac-jdk.html][JDK 7 Installation for Mac OS X]]
 
 * Emacs
 ** Emacs 编译安装
@@ -108,6 +127,6 @@ $ cd ~/Projects/fossils
 $ fossil clone http://user:password@x.x.x.x:8080/index tommy.fossil
 $ chmod 664 tommy.fossil
 #+END_EXAMPLE
-  参考资料：
+  参考文档：
   + [[http://www.editrocket.com/articles/perl_apache_mac.html][Running Perl CGI on the Mac OS X Apache Web Server]]
   + [[http://bitorb.wordpress.com/2013/06/05/centos-%E4%B8%8B%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85-fossil-%E5%85%AC%E5%85%B1%E5%BA%93/][CentOS 下配置安装 Fossil 公共库]]
