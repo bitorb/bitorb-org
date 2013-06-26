@@ -1,5 +1,6 @@
 #+TITLE: Software Installation
 #+AUTHOR: Tommy Wang
+#+OPTIONS: ^:nil
 
 * Java
   Linux 下我是通过软链接的方式来切换不同的 JDK 和 JRE 版本，[[http://www.oracle.com/technetwork/java/javase/downloads/index.html][官网下载]] 相应的版本（通常是 x64 版本）到 /usr/java 目录下。
@@ -9,6 +10,12 @@ $ cd /usr/java
 $ sudo tar xzvf jdk-7u25-linux-x64.tar.gz
 $ sudo ln -sf /usr/java/jdk1.7.0_25/ /usr/java/default
 #+END_EXAMPLE
+
+  相关的环境变量如 JAVA_HOME 通过下面的软链接进行加载：
+#+BEGIN_EXAMPLE
+$ ln -sf ~/Projects/gaixie/bitorb/dot.bash_profile ~/.bash_profile
+#+END_EXAMPLE
+
   Mac OSX 下只需 [[http://www.oracle.com/technetwork/java/javase/downloads/index.html][官网下载]] 相应的 dmg 文件，然后按官方的安装教程进行安装，详细过程见参考文档。安装完成后，使用 java_home 命令运行其它的 JDK 版本：
 #+BEGIN_EXAMPLE
 $ java -version
@@ -18,6 +25,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 23.25-b01, mixed mode)
 
 $ /usr/libexec/java_home -v 1.7.0_07 --exec javac -version
 #+END_EXAMPLE
+
   通过下面语句删除无用的版本：
 #+BEGIN_EXAMPLE
 $ cd /Library/Java/JavaVirtualMachines/
