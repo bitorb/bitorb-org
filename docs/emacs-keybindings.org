@@ -3,58 +3,63 @@
 #+OPTIONS: num:nil
 
 * 已绑定快捷键
-| keys        | scope        | function                            | description                                                              |
-|-------------+--------------+-------------------------------------+--------------------------------------------------------------------------|
-| C-h b       | global       | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Misc-Help.html][describe-bindings]]                   | 列出所有已定义的快捷键                                                   |
-| C-@         | global       | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Setting-Mark.html][set-mark-command]]                    | 标记点的位置，另一个同样功能的热键 C-SPC 中文环境下被操作系统占用了      |
-| C-x h       | global       | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Marking-Objects.html][mark-whole-buffer]]                   | 当前 buffer 中所有内容全部选中                                           |
-| C-x +       | global       | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Change-Window.html][balance-windows]]                     | 将窗口变为相同的大小                                                     |
-| C-x -       | global       | shrink-window-if-larger-than-buffer | 缩小窗口以适合 buffer 中显示的内容                                       |
-| C-x ^       | global       | enlarge-window                      | 当前窗口变高一行，C-u - 2 C-x ^ 表示当前窗口变低两行                     |
-| C-x }       | global       | enlarge-window-horizontally         | 当前窗口变宽一列                                                         |
-| C-x {       | global       | shrink-window-horizontally          | 当前窗口变窄一列                                                         |
-| C-x 0       | global       | delete-window                       | 删除当前窗口                                                             |
-| C-x 1       | global       | delete-other-windows                | 删除其它窗口，只保留当前窗口                                             |
-| C-x 2       | global       | split-window-below                  | 将当前窗口上下平均分割窗口                                               |
-| C-x 3       | global       | split-window-right                  | 将当前窗口左右平均分割窗口                                               |
-| C-M-\       | global       | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Indentation-Commands.html#Indentation-Commands][indent-region]]                       | 对选择的 region 进行缩进                                                 |
-| C-M-q       | global       |                                     | 括号分组内进行缩进，光标必须在起始括号所在行上                           |
-| M-%         | global       | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Query-Replace.html][query-replace]]                       | 逐个替换匹配到的字符串                                                   |
-|-------------+--------------+-------------------------------------+--------------------------------------------------------------------------|
-| C-c <left>  | global       | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Window-Convenience.html][winner-undo]]                         | undo 到上一个窗口配置                                                    |
-| C-c <right> | global       | winner-redo                         | redo 到下一个窗口配置                                                    |
-|-------------+--------------+-------------------------------------+--------------------------------------------------------------------------|
-| C-c a       | global       | [[http://orgmode.org/manual/Activation.html#Activation][org-agenda]]                          | 打开日程命令 buffer                                                      |
-| C-c b       | global       | org-iswitchb                        | 在多个 org buffer 中切换                                                 |
-| C-c c       | global       | org-capture                         | 几乎不用打断当前的工作，快速的记录一个想法或信息到制定的文件             |
-| C-c l       | global       | org-store-link                      | 把当前文件存为一个链接，可以在其它 buffer 中 C-c C-l 来插入此链接        |
-|-------------+--------------+-------------------------------------+--------------------------------------------------------------------------|
-| [[http://orgmode.org/manual/Easy-Templates.html#Easy-Templates][<e TAB]]      | org-mode     |                                     | 文本中输入自动生成 EXAMPLE 代码块                                        |
-| <s TAB      | org-mode     |                                     | 文本中输入自动生成 SRC 代码块                                            |
-| C-c .       | org-mode     | [[http://orgmode.org/manual/Creating-timestamps.html#Creating-timestamps][org-time-stamp]]                      | 插入一个日期                                                             |
-|-------------+--------------+-------------------------------------+--------------------------------------------------------------------------|
-| [[http://www.gnu.org/software/emacs/manual/html_node/nxml-mode/Outlining.html#Outlining][C-c C-o C-a]] | nxml-mode    |                                     | 显示所有章节                                                             |
-| C-c C-o C-c | nxml-mode    |                                     | 隐藏当前章节的文本内容，子章节并不隐藏                                   |
-| C-c C-o C-d | nxml-mode    |                                     | 隐藏当前章节的文本内容及所有子章节                                       |
-| C-c C-o C-e | nxml-mode    |                                     | 显示当前章节的所有文本内容                                               |
-| C-c C-o C-k | nxml-mode    |                                     | 显示当前章节及所有子章节的标题                                           |
-| C-c C-o C-l | nxml-mode    |                                     | 隐藏当前章节和它所有直接、非直接子章节的文本内容                         |
-| C-c C-o C-o | nxml-mode    |                                     | 除了当前章节的文本内容不隐藏，其它章节(包括父，子章节)的文本内容全部隐藏 |
-| C-c C-o C-s | nxml-mode    |                                     | 显示当前章节下的所有内容及所有子章节                                     |
-| C-c C-o C-t | nxml-mode    |                                     | 隐藏所有章节的文本内容                                                   |
-|-------------+--------------+-------------------------------------+--------------------------------------------------------------------------|
-| C-c <       | picture-mode | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Insert-in-Picture.html#Insert-in-Picture][picture-movement-left]]               | 插入后向左移，同 C-c <LEFT>                                              |
-| C-c >       | picture-mode | picture-movement-right              | 插入后向右移，同 C-c <RIGHT>                                             |
-| C-c ^       | picture-mode | picture-movement-up                 | 插入后向上移，同 C-c <UP>                                                |
-| C-c .       | picture-mode | picture-movement-down               | 插入后向下移，同 C-c <DOWN>                                              |
-| C-c `       | picture-mode | picture-movement-nw                 | 插入后向左上（西北）移，同 C-c <HOME>                                    |
-| C-c '       | picture-mode | picture-movement-ne                 | 插入后向右上（东北）移，同 C-c <prior>                                   |
-| C-c /       | picture-mode | picture-movement-sw                 | 插入后向左下（西南）移，同 C-c <END>                                     |
-| C-c \       | picture-mode | picture-movement-se                 | 插入右向右下（东南）移，同 C-c <next>                                    |
-| C-c C-c     | picture-mode | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Picture-Mode.html][picture-mode-exit]]                   | 退回到原来的 major-mode                                                  |
+| keys        | scope        | description                                                              |
+|-------------+--------------+--------------------------------------------------------------------------|
+| [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Misc-Help.html][C-h b]]       | global       | 列出所有已定义的快捷键                                                   |
+| [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Setting-Mark.html][C-@]]         | global       | 标记点的位置，另一个同样功能的热键 C-SPC 中文环境下被操作系统占用了      |
+| [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Marking-Objects.html][C-x h]]       | global       | 当前 buffer 中所有内容全部选中                                           |
+| [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Change-Window.html][C-x +]]       | global       | 将窗口变为相同的大小                                                     |
+| C-x -       | global       | 缩小窗口以适合 buffer 中显示的内容                                       |
+| C-x ^       | global       | 当前窗口变高一行，C-u - 2 C-x ^ 表示当前窗口变低两行                     |
+| C-x }       | global       | 当前窗口变宽一列                                                         |
+| C-x {       | global       | 当前窗口变窄一列                                                         |
+| C-x 0       | global       | 删除当前窗口                                                             |
+| C-x 1       | global       | 删除其它窗口，只保留当前窗口                                             |
+| C-x 2       | global       | 将当前窗口上下平均分割窗口                                               |
+| C-x 3       | global       | 将当前窗口左右平均分割窗口                                               |
+| [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Indentation-Commands.html#Indentation-Commands][C-M-\]]       | global       | 对选择的 region 进行缩进                                                 |
+| C-M-q       | global       | 括号分组内进行缩进，光标必须在起始括号所在行上                           |
+| [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Query-Replace.html][M-%]]         | global       | 逐个替换匹配到的字符串                                                   |
+|-------------+--------------+--------------------------------------------------------------------------|
+| [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Window-Convenience.html][C-c <left>]]  | global       | undo 到上一个窗口配置                                                    |
+| C-c <right> | global       | redo 到下一个窗口配置                                                    |
+|-------------+--------------+--------------------------------------------------------------------------|
+| [[http://orgmode.org/manual/Activation.html#Activation][C-c a]]       | global       | 打开日程命令 buffer                                                      |
+| C-c b       | global       | 在多个 org buffer 中切换                                                 |
+| C-c c       | global       | 几乎不用打断当前的工作，快速的记录一个想法或信息到制定的文件             |
+| C-c l       | global       | 把当前文件存为一个链接，可以在其它 buffer 中 C-c C-l 来插入此链接        |
+|-------------+--------------+--------------------------------------------------------------------------|
+| [[http://orgmode.org/manual/Easy-Templates.html#Easy-Templates][<e TAB]]      | org-mode     | 文本中输入自动生成 EXAMPLE 代码块                                        |
+| <s TAB      | org-mode     | 文本中输入自动生成 SRC 代码块                                            |
+| [[http://orgmode.org/manual/Creating-timestamps.html#Creating-timestamps][C-c .]]       | org-mode     | 插入一个日期                                                             |
+| [[http://orgmode.org/manual/Built_002din-table-editor.html][M-S-<left>]]  | org-mode     | 删除表格的当前列                                                         |
+| M-S-<right> | org-mode     | 当前列左侧插入一列                                                       |
+| M-S-<up>    | org-mode     | 删除表格的当前行                                                         |
+| M-S-<down>  | org-mode     | 当前行上方插入一行                                                       |
+| [[http://orgmode.org/manual/The-Export-Dispatcher.html#The-Export-Dispatcher][C-c C-e]]     | org-mode     | 导出到其它格式                                                           |
+|-------------+--------------+--------------------------------------------------------------------------|
+| [[http://www.gnu.org/software/emacs/manual/html_node/nxml-mode/Outlining.html#Outlining][C-c C-o C-a]] | nxml-mode    | 显示所有章节                                                             |
+| C-c C-o C-c | nxml-mode    | 隐藏当前章节的文本内容，子章节并不隐藏                                   |
+| C-c C-o C-d | nxml-mode    | 隐藏当前章节的文本内容及所有子章节                                       |
+| C-c C-o C-e | nxml-mode    | 显示当前章节的所有文本内容                                               |
+| C-c C-o C-k | nxml-mode    | 显示当前章节及所有子章节的标题                                           |
+| C-c C-o C-l | nxml-mode    | 隐藏当前章节和它所有直接、非直接子章节的文本内容                         |
+| C-c C-o C-o | nxml-mode    | 除了当前章节的文本内容不隐藏，其它章节(包括父，子章节)的文本内容全部隐藏 |
+| C-c C-o C-s | nxml-mode    | 显示当前章节下的所有内容及所有子章节                                     |
+| C-c C-o C-t | nxml-mode    | 隐藏所有章节的文本内容                                                   |
+|-------------+--------------+--------------------------------------------------------------------------|
+| [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Insert-in-Picture.html#Insert-in-Picture][C-c <]]       | picture-mode | 插入后向左移，同 C-c <LEFT>                                              |
+| C-c >       | picture-mode | 插入后向右移，同 C-c <RIGHT>                                             |
+| C-c ^       | picture-mode | 插入后向上移，同 C-c <UP>                                                |
+| C-c .       | picture-mode | 插入后向下移，同 C-c <DOWN>                                              |
+| C-c `       | picture-mode | 插入后向左上（西北）移，同 C-c <HOME>                                    |
+| C-c '       | picture-mode | 插入后向右上（东北）移，同 C-c <prior>                                   |
+| C-c /       | picture-mode | 插入后向左下（西南）移，同 C-c <END>                                     |
+| C-c \       | picture-mode | 插入右向右下（东南）移，同 C-c <next>                                    |
+| [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Picture-Mode.html][C-c C-c]]     | picture-mode | 退回到原来的 major-mode                                                  |
   
 * 未绑定快捷键
-| keys | scope  | function    | description                              |
-|------+--------+-------------+------------------------------------------|
-|      | global | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Lisp-Eval.html][eval-buffer]] | 执行当前 buffer 中的所有 emacs lisp 语句 |
-|      | global | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Compilation.html#Compilation][compile]]     | 运行一个异步的编译器                     |
+| scope  | function    | description                              |
+|--------+-------------+------------------------------------------|
+| global | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Lisp-Eval.html][eval-buffer]] | 执行当前 buffer 中的所有 emacs lisp 语句 |
+| global | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Compilation.html#Compilation][compile]]     | 运行一个异步的编译器                     |
