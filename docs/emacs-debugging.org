@@ -1,0 +1,63 @@
+#+TITLE: Debugging With Emacs
+#+AUTHOR: Tommy Wang
+#+OPTIONS: ^:nil
+
+* 使用 GDB 调试 C 或 C++ 程序
+  GDB 是 GNU 的调试器，它可以让您查看程序的内部结构、打印变量值、
+  设置断点，以及单步调试源代码。它是功能极其强大的工具，适用于修复程序代码中的问题。
+  它和 Emacs 算是同门，很容易进行集成。
+** 编译程序
+   假设我们有一个程序 hello.cpp。
+#+BEGIN_EXAMPLE
+#include <iostream>
+
+int main(void)
+{
+  char greeting[] = "Hello World!";
+  std::cout << greeting << std::endl;
+  return 0;
+}
+#+END_EXAMPLE
+   开始调试之前，必须用程序中的调试信息编译要调试的程序。这样，gdb
+   才能够调试所使用的变量、代码行和函数。如果要进行编译，请在 g++
+   （或 gcc）下使用额外的 '-g' 选项来编译程序。
+#+BEGIN_EXAMPLE
+$ g++ -g -o hello hello.cpp
+#+END_EXAMPLE
+
+** 在 Emacs 中打开 GDB
+   在 Emacs 编辑 hello.cpp 文件窗口下，通过下面命令启动一个独立的 gdb 窗口：
+#+BEGIN_EXAMPLE
+M-x gdb
+#+END_EXAMPLE
+   然后输入 gdb -i=mi hello，表示 gdb 的解释器 (-interpreter) 使用最新的 mi 接口。
+
+** GDB 常用命令
+| command  | description                                                                 |
+|----------+-----------------------------------------------------------------------------|
+| list     | 列出源码，可以用两个整数做参数，用逗号风格，来显示指定行的代码段。          |
+| run      | 运行程序至第一个断点。[fn:1]                                                |
+| break    | 加断点，例如 break 5 表示在第 5行加一个断点。断点全部加好以后，可以再 run。 |
+| next     | 执行下一个语句。                                                            |
+| continue | 执行到下一个断点。                                                          |
+| watch    | 观测 一个变量，例如 watch ret 表示观测 ret 变量。                           |
+| print    | 输出一个变量的值，例如 print ret 表示向屏幕输出 ret 的值。                  |
+| quit     | 退出 gdb 调试模式。                                                         |
+
+** 参考文档
+  + [[http://www.ibm.com/developerworks/cn/linux/sdk/gdb/index.html][使用 GDB 调试 Linux 软件]]
+  + [[http://kb.iu.edu/data/aqsy.html][Step-by-step example for using GDB within Emacs to debug a C or C++ program]]
+
+* Footnotes
+
+[fn:1] 如果提示下面的信息，需要额外安装一些调试用的软件包。Fedora 下，debuginfo-install 在 yum-utils 包下。
+#+BEGIN_EXAMPLE
+(gdb) run
+Starting program: /home/tommy/hello
+(gdb) Missing separate debuginfos, use: debuginfo-install glibc-2.14.1-6.i686 
+libgcc-4.6.3-2.fc15.i686 libstdc++-4.6.3-2.fc15.i686
+
+$ sudo yum install yum-utils
+$ sudo debuginfo-install glibc libgcc libstdc++
+#+END_EXAMPLE
+

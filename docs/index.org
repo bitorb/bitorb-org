@@ -5,5 +5,5 @@
   + [[./system-software.org][常用软件的安装与配置]]
 + Emacs
   + [[./emacs-keybindings.org][Emacs 常用快捷键]]
-
+  + [[./emacs-debugging.org][Emacs 下程序的调试]]
 

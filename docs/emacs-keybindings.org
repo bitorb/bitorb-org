@@ -6,6 +6,7 @@
 | keys        | scope        | description                                                              |
 |-------------+--------------+--------------------------------------------------------------------------|
 | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Misc-Help.html][C-h b]]       | global       | 列出所有已定义的快捷键                                                   |
+| [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Examining.html][C-h v]]       | global       | 显示给定变量的当前值                                                     |
 | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Setting-Mark.html][C-@]]         | global       | 标记点的位置，另一个同样功能的热键 C-SPC 中文环境下被操作系统占用了      |
 | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Marking-Objects.html][C-x h]]       | global       | 当前 buffer 中所有内容全部选中                                           |
 | [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Change-Window.html][C-x +]]       | global       | 将窗口变为相同的大小                                                     |
