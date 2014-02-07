@@ -121,7 +121,7 @@ $ emacs
 M-x version
 M-x org-version
 #+END_EXAMPLE
-
+   
 * Thunderbird
   选择 Thunderbird 作为我的邮件客户端的主要原因是它可以同时安装在 Linux 和 Mac OSX 上，相互的数据迁移与恢复比较方便。
   而且这货目前市场占有率那么高，稳定性和易用性应该也不是问题。首先去 [[http://www.mozilla.org/zh-CN/thunderbird/][官网下载]] 相应的版本。
@@ -179,3 +179,12 @@ $ chmod 664 tommy.fossil
   参考文档：
   + [[http://www.editrocket.com/articles/perl_apache_mac.html][Running Perl CGI on the Mac OS X Apache Web Server]]
   + [[http://bitorb.wordpress.com/2013/06/05/centos-%E4%B8%8B%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85-fossil-%E5%85%AC%E5%85%B1%E5%BA%93/][CentOS 下配置安装 Fossil 公共库]]
+
+* Docbook
+  从 [[http://sourceforge.net/projects/docbook/files/docbook-xsl-ns/][官网下载]] 下载最新的 docbook-xml-ns 软件包，这里试用的是 1.78.1 版本。下面命令也适用于 Mac OSX。
+#+BEGIN_EXAMPLE
+$ tar xjvf docbook-xsl-ns-1.78.1.tar.bz2
+$ sudo mv ~/Downloads/docbook-xsl-ns-1.78.1 /usr/local/share/
+$ sudo ln -s /usr/local/share/docbook-xsl-ns-1.78.1 /usr/local/share/docbook-xsl-ns
+#+END_EXAMPLE
+  最后设置环境变量 DOCBOOK_PATH，详见 [[https://github.com/bitorb/bitorb/blob/master/dot.bash_profile][~/.bash_profile]] 文件。

@@ -19,7 +19,6 @@
   + 1977年生于四川，长于甘肃，大学毕业于陕西，现和妻子，女儿，指针（我的爱犬）定居在北京。
   + 目前在一家科技公司做技术负责人，技术领域不太固定，但始终奋斗在编程的最前线，很幸苦，但很享受。
   + 最常用的网名是 bitorb, 工作中有时会使用我的英文名 Tommy。
-  + 关于我的日常工作和生活，可以访问 [[./diary/index.org][我的日志]]。
   + 我的 Mail : bitorb AT gmail DOT com，我在网络社交方面比较保守，几乎不用微博、微信、QQ 等应用。
   + 我的 GPG Key Fingerprint : [[http://pgp.mit.edu:11371/pks/lookup?search%3D0xA565F2C2&amp%3Bop%3Dindex][573F C15E B6A4 8432 EA49   FA77 E05C CC56 A565 F2C2]]
 
