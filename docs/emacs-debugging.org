@@ -44,7 +44,7 @@ M-x gdb
 | print    | 输出一个变量的值，例如 print ret 表示向屏幕输出 ret 的值。                  |
 | quit     | 退出 gdb 调试模式。                                                         |
 
-** 参考文档
+参考文档
   + [[http://www.ibm.com/developerworks/cn/linux/sdk/gdb/index.html][使用 GDB 调试 Linux 软件]]
   + [[http://kb.iu.edu/data/aqsy.html][Step-by-step example for using GDB within Emacs to debug a C or C++ program]]
 
