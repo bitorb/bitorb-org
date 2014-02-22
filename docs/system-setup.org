@@ -8,9 +8,12 @@
    
    只勾选：
    + 已保存的书签
-   + 设置
+
 * Mac OSX
-** 修改 Terminal 窗口显示的主机名
+** 修改 Terminal 窗口风格及显示的主机名
+   一直习惯用黑底绿字的终端风格，导出了一个描述文件 Mac-Tommy.terminal 并通过 Dropbox 在我所有的 Mac 上同步。
+   需要导入就直接打开：终端 --> 偏好设置 --> 设置 --> 描述文件 --> 导入
+
    不太喜欢 Mac 下 Terminal 窗口显示的主机名，如果是 MacBook Pro 我会用下面命令把它改为 tommbp
 #+BEGIN_EXAMPLE
 $ scutil --get HostName

@@ -123,6 +123,11 @@ $ hash -r
 $ type git
 #+END_EXAMPLE
   与 Linux 相比，除了删除默认 git 的语句不同，并且不需要手动安装编译依赖的包，其它的语句没什么区别。
+
+  最后将 git 的全局配置文件通过下面的软链接进行加载：
+#+BEGIN_EXAMPLE
+$ ln -sf ~/Projects/gaixie/bitorb/dot.gitconfig ~/.gitconfig
+#+END_EXAMPLE
  
 * Emacs
 ** Emacs 编译安装
