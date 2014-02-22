@@ -1,0 +1,20 @@
+#+TITLE: System Setup
+#+AUTHOR: Tommy Wang
+#+OPTIONS: ^:nil
+
+* 所有系统
+** Google Chrome 的同步设置
+   设置 --> 高级同步设置 --> 选择要同步的数据类型
+   
+   只勾选：
+   + 已保存的书签
+   + 设置
+* Mac OSX
+** 修改 Terminal 窗口显示的主机名
+   不太喜欢 Mac 下 Terminal 窗口显示的主机名，如果是 MacBook Pro 我会用下面命令把它改为 tommbp
+#+BEGIN_EXAMPLE
+$ scutil --get HostName
+$ sudo scutil --set HostName tommbp
+#+END_EXAMPLE 
+   参考文档：
+   + [[http://apple.stackexchange.com/questions/66611/how-to-change-computer-name-so-terminal-displays-it-in-mac-os-x-mountain-lion][How to change computer name so terminal displays it in Mac OS X]]

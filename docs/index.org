@@ -2,6 +2,7 @@
 #+AUTHOR: Tommy Wang
 
 + System
+  + [[./system-setup.org][重装系统时习惯的设置]]
   + [[./system-software.org][常用软件的安装与配置]]
 + Emacs
   + [[./emacs-keybindings.org][Emacs 常用快捷键]]
