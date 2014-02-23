@@ -94,7 +94,7 @@ $ sudo rm -rf jdk1.7.0_07.jdk/
   一份 Git 源码到 /usr/local/src 目录下，然后安装编译依赖的软件包。
 #+BEGIN_EXAMPLE
 $ cd /usr/local/src
-$ sudo git clone git://git.kernel.org/pub/scm/git/git.git
+$ sudo git clone https://github.com/git/git.git
 $ sudo yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-CPAN
 #+END_EXAMPLE
   编译安装到 /usr/local/bin 目录下，之前系统默认的 Git 通常被安装在 /usr/bin 目录下。
@@ -108,8 +108,8 @@ $ sudo yum erase git
 $ hash -r
 $ type git
 #+END_EXAMPLE
-  Mac OSX 下 git 会被包含在 Xcode 中一起被安装，不过版本很低。要想升级到最新版本，
-  可以直接[[http://code.google.com/p/git-osx-installer/][下载]] dmg 文件，根据里面的 README 说明进行安装。或者像我一样通过源码编译安装。
+  Mac OSX 下 git 会被包含在 Xcode 中一起被安装，不过版本偏低。要想升级到最新版本，
+  可以直接[[http://code.google.com/p/git-osx-installer/][下载]] dmg 文件，根据里面的 README 说明进行安装。或者通过下面命令进行源码编译安装。
 #+BEGIN_EXAMPLE
 $ mkdir /usr/local/src
 $ cd /usr/local/src
@@ -123,6 +123,8 @@ $ hash -r
 $ type git
 #+END_EXAMPLE
   与 Linux 相比，除了删除默认 git 的语句不同，并且不需要手动安装编译依赖的包，其它的语句没什么区别。
+  不过每次 app store 升级 xcode，也会同时升级内置的 git ，还需要手动切换到你自己编译的 git，有点麻烦，
+  我还是老老实实用 Xcode 自带的 git 就好了。
 
   最后将 git 的全局配置文件通过下面的软链接进行加载：
 #+BEGIN_EXAMPLE
