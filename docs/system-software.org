@@ -259,3 +259,14 @@ $ sudo mv ~/Downloads/docbook-xsl-ns-1.78.1 /usr/local/share/
 $ sudo ln -s /usr/local/share/docbook-xsl-ns-1.78.1 /usr/local/share/docbook-xsl-ns
 #+END_EXAMPLE
   最后设置环境变量 DOCBOOK_PATH，详见 [[https://github.com/bitorb/bitorb/blob/master/dot.bash_profile][~/.bash_profile]] 文件。
+* Maven
+  从 Mac OSX Mavericks (10.9) 以后，不再默认安装 Maven 了，需要通过下面命令手动安装(也适用 Linux)。
+  首先从 [[http://maven.apache.org/download.cgi][官网下载]] 最新的安装文件，这里 apache-maven-3.2.1-bin.tar.gz 。
+#+BEGIN_EXAMPLE
+$ sudo mkdir /usr/local/maven
+$ sudo mv ~/Downloads/apache-maven-3.2.1-bin.tar.gz /usr/local/maven/
+$ cd /usr/local/maven/
+$ sudo tar xzvf apache-maven-3.2.1-bin.tar.gz
+$ sudo ln -sf /usr/local/maven/apache-maven-3.2.1 /usr/local/maven/default
+#+END_EXAMPLE
+  最后设置环境变量 M2_HOME，详见 [[https://github.com/bitorb/bitorb/blob/master/dot.bash_profile][~/.bash_profile]] 文件。
