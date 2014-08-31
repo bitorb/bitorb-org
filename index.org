@@ -25,9 +25,8 @@
 
 本站的部分外链有时可能无法正常访问，希望你有点崂山道士的本领，我甚至觉得这是目前国内技术同行必须掌握的一项基本技能。
 * 目前业余时间的开销
-  + 基于深度的运动采集及处理，[[http://www.openni.org][OpenNI]], [[http://opencv.org][OpenCV]] 类库的使用。
-  + [[http://www.gnu.org/software/emacs/][Emacs]] 的配置，[[http://orgmode.org][Emacs Orgmode]] 的使用。
-  + Jibu 项目文档的编写。
+  + 遛狗，长假时与家人出游。
+  + 看小说，偶尔看电视，没事就整理我的几台电脑，更多的时间是发呆。
 * 程序与文档
   下列所有程序和文档的源码分别存放在 [[http://code.google.com][Google Code]]， [[http://github.com][GitHub]]， [[http://java.net][Java.net]]。 
   如果没有特殊声明，下面程序都采用 [[http://www.apache.org/licenses/LICENSE-2.0.txt][Apache License, Version 2.0]] 发布。所有文档都采用 [[http://www.gnu.org/licenses/fdl.txt][GNU 自由文档许可证, Version 1.3]] 发布。
