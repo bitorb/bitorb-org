@@ -270,4 +270,26 @@ $ cd /usr/local/maven/
 $ sudo tar xzvf apache-maven-3.2.1-bin.tar.gz
 $ sudo ln -sf /usr/local/maven/apache-maven-3.2.1 /usr/local/maven/default
 #+END_EXAMPLE
-  最后设置环境变量 M2_HOME，详见 [[https://github.com/bitorb/bitorb/blob/master/dot.bash_profile][~/.bash_profile]] 文件。
+  然后设置环境变量 M2_HOME，详见 [[https://github.com/bitorb/bitorb/blob/master/dot.bash_profile][~/.bash_profile]] 文件。
+  最后如果要 deploy 到远程库，需要配置一个 settings.xml 文件，可以直接从 maven 的安装目录复制一个过来修改。
+#+BEGIN_EXAMPLE
+$ cp /usr/local/maven/default/conf/settings.xml ~/.m2/
+$ vi ~/.m2/settings.xml
+#+END_EXAMPLE
+  由于要将远程库 (如 sonatype) 的账号密码写到这个文件中，所以不便将此文件放到 github 中版本化。
+  增加的内容如下：
+#+BEGIN_EXAMPLE
+[...]
+    <server>
+      <id>sonatype-staging</id>
+      <username>xxxxxx</username>
+      <password>xxxxxx</password>
+    </server>
+    <server>
+      <id>sonatype-snapshots</id>
+      <username>xxxxxx</username>
+      <password>xxxxxx</password>
+    </server>
+[...]
+#+END_EXAMPLE
+
