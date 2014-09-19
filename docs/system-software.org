@@ -177,8 +177,17 @@ $ cd ~/Projects/others/
 $ git clone git://jblevins.org/git/markdown-mode.git
 #+END_EXAMPLE
    参考文档：
-   + [[http://jblevins.org/projects/markdown-mode/][Emacs Markdown mode]]
+   + [[http://jblevins.org/projects/markdown-mode/][Emacs Markdown Mode]]
 
+** Groovy 配置
+  和 org 和 markdown 模式一样，直接克隆源码就行，唯一和官网介绍的方法有点不同的是修改了一下克隆出来的项目目录名。
+  个人习惯，不喜欢开源项目的目录名有大写字符。
+#+BEGIN_EXAMPLE
+$ cd ~/Projects/others/
+$ git clone git://github.com/russel/Emacs-Groovy-Mode.git groovy-mode
+#+END_EXAMPLE
+   参考文档：
+   + [[http://groovy.codehaus.org/Emacs+Groovy+Mode][Emacs Groovy Mode]]
 ** Emacs 配置
    在前面 Emacs 及各种模式安装完成后，最后做的是 Emacs 配置，Linux 和 Mac OSX 没有区别，还是通过目录软链接的方式，
    注意如果之前有 ~/.emacs.d 目录或者是 ~/.emacs 文件，备份一下，直接删掉，我所有的配置都在  [[https://github.com/bitorb/bitorb][bitorb 项目]] 中。
