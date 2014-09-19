@@ -293,7 +293,7 @@ $ vi ~/.m2/settings.xml
 [...]
 #+END_EXAMPLE
 * Gradle
-  Gradle 的安装配置和 Maven 一样，先从 [[http://www.gradle.org/downloads][官网下载]] 最新的安装文件。然后解压缩到 /usr/local/gradle 目录下。
+  Gradle 的安装配置和 Maven 一样，先从 [[http://www.gradle.org/downloads][官网下载]] 最新的安装文件。然后解压缩到指定目录。
   做好软链接。环境变量 GRADLE_HOME，见 [[https://github.com/bitorb/bitorb/blob/master/dot.bash_profile][~/.bash_profile]] 文件。下面命令同时适用于 Mac OSX 和 Linux。
 #+BEGIN_EXAMPLE
 $ sudo mkdir /usr/local/gradle
