@@ -203,32 +203,6 @@ M-x version
 M-x org-version
 #+END_EXAMPLE
 
-* Thunderbird
-  选择 Thunderbird 作为我的邮件客户端的主要原因是它可以同时安装在 Linux 和 Mac OSX 上，相互的数据迁移与恢复比较方便。
-  而且这货目前市场占有率那么高，稳定性和易用性应该也不是问题。首先去 [[http://www.mozilla.org/zh-CN/thunderbird/][官网下载]] 相应的版本。
-
-  如果是 Linux，执行下面的命令：
-#+BEGIN_EXAMPLE 
-$ sudo mkdir /usr/local/thunderbird
-$ sudo tar xvf thunderbird-17.0.6.tar.bz2 -C /usr/local/thunderbird/
-$ sudo mv /usr/local/thunderbird/thunderbird/ /usr/local/thunderbird/17.0.6
-$ sudo ln -sf /usr/local/thunderbird/17.0.6/thunderbird /usr/local/bin/thunderbird
-$ sudo ln -sf /usr/local/thunderbird/17.0.6/chrome/icons/default/default256.png /usr/share/pixmaps/thunderbird.png
-#+END_EXAMPLE
-  上面是我习惯的安装目录，为了以后装新版本方便，做一个软链接到 /usr/local/bin。图标的软链接是为了 GNOME 3 下的桌面图标用的。
-  然后要在 ./local/share/applications 目录下创建一个 [[https://github.com/bitorb/bitorb/blob/master/dot.local/share/applications/mozilla-thunderbird.desktop][mozilla-thunderbird.desktop]] 文件。这个文件我已经通过 [[https://github.com/bitorb/bitorb][bitorb 项目]] clone 
-  到我的本地了，只要做一下目录链接。注意如果 applications 目录已存在，要删除掉。如果已做软链接，就不用执行下面的语句。
-#+BEGIN_EXAMPLE 
-$ ln -sf ~/Projects/gaixie/bitorb/dot.local/share/applications/ ~/.local/share/applications
-#+END_EXAMPLE
-  最后通过 ALT+F2 r 刷新 gnome，就可以看到 Thunderbird 的启动图标了。启动后会创建一个 ~/.thunderbird 配置目录，把之前备份的
-  数据文件恢复过来，要先把 thunderbird 停掉。
-#+BEGIN_EXAMPLE 
-$ rm -rf ~/.thunderbird/xxxxxxxx.default/*
-$ cp -rf ~/backup/yyyyyyyy/default/* ~/.thunderbird/xxxxxxxx.default/
-#+END_EXAMPLE
-  Mac OSX 下的安装就简单很多了，直接通过 dmg 文件安装。不用做任何软链接，唯一要注意的是它的配置目录在 ~/Library/Thunderbird 下。
-  用了一段时间，感觉没有 Mac 自带的邮件客户端稳定，卸载了。
 * Fossil
   Linux 和 Mac OSX 都采用源码编译方式安装，先从 [[http://www.fossil-scm.org/download.html][官网下载]] 最新的源码包，编译后得到 fossil 可执行文件 ，直接复制到 /usr/local/bin 目录下，
   因为只有一个文件，就不做软链接了。
