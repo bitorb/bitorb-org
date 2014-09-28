@@ -7,4 +7,5 @@
 + Emacs
   + [[./emacs-keybindings.org][Emacs 常用快捷键]]
   + [[./emacs-debugging.org][Emacs 下程序的调试]]
-
++ PostgreSQL
+  + [[./pgsql-install.org][源码编译安装 PostgreSQL]]

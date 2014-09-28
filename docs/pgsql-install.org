@@ -1,0 +1,82 @@
+#+TITLE: PostgreSQL Installation
+#+AUTHOR: Tommy Wang
+#+OPTIONS: ^:nil
+
+* 编译环境
+  Mac OSX 下只要装了 Xcode 就行，所有编译需要的工具和类库都有了。CentOS 下需要安装下面的软件包。
+#+BEGIN_EXAMPLE
+$ sudo yum install make gcc readline-devel zlib-devel
+#+END_EXAMPLE
+
+* 下载最新的源码包
+  Linux 下我喜欢把一些大软件的源码包下载到 /usr/local/src 目录下，Mac OSX 默认没有这个目录，需要创建一个，
+  然后从 PostgreSQL [[http://www.postgresql.org/ftp/source/][官网下载]] 最新的源码包。
+#+BEGIN_EXAMPLE
+$ sudo mkdir /usr/local/src
+$ cd /usr/local/src
+$ sudo curl -O http://ftp.postgresql.org/pub/source/v9.4beta2/postgresql-9.4beta2.tar.gz
+$ sudo tar xzvf postgresql-9.4beta2.tar.gz
+#+END_EXAMPLE
+
+* 编译安装到指定目录
+  将 9.4beta2 这个版本编译并安装到 /usr/local/pgsql/9.4beta2 这个目录下，然后为该目录创建一个 default的软链接，表示当先正在使用的数据库版本。
+#+BEGIN_EXAMPLE
+$ cd /usr/local/src/postgresql-9.4beta2
+$ sudo ./configure --prefix=/usr/local/pgsql/9.4beta2
+$ sudo make
+$ sudo make install
+$ sudo make clean
+$ sudo ln -s /usr/local/pgsql/9.4beta2 /usr/local/pgsql/default
+#+END_EXAMPLE
+
+* 创建一个数据库管理员用户
+  Mac OSX 下不能直接创建用户，因为新增的用户默认都有管理员权限，好在系统默认有一个 _postgres 用户可以直接用。
+  CentOS 下还是需要老老实实的创建一个 postgres 用户。注意两个系统的用户名不同，Mac OSX 的带一个下划线。
+#+BEGIN_EXAMPLE
+$ sudo useradd -c "PostgreSQL Server" postgres
+#+END_EXAMPLE
+
+* 数据库初始化
+  创建一个目录 /var/lib/pgsql，用来存贮数据库的数据文件。并为 postgres 设置访问权限。
+  用 postgres 创建一个当前主版本的数据目录 9.4，并做一个 default 软链接。注意在 initdb 时指定一个数据库超级用户 postgres，
+  否则 Mac OSX 使用默认的 _postgres 会有问题。
+#+BEGIN_EXAMPLE
+$ sudo mkdir /var/lib/pgsql
+$ sudo chown postgres:postgres /var/lib/pgsql
+
+# 如果是 Mac OSX 应该是 _postgres:wheel 
+$ sudo chown _postgres:wheel /var/lib/pgsql
+
+$ sudo -u postgres mkdir /var/lib/pgsql/9.4
+$ sudo -u postgres ln -s /var/lib/pgsql/9.4 /var/lib/pgsql/default
+$ sudo -u postgres /usr/local/pgsql/default/bin/initdb -D /var/lib/pgsql/default/data -U postgres
+#+END_EXAMPLE
+
+* 数据库访问设置
+  Mac OSX 主要是本机测试用，不用做下面的设置，如果是 CentOS 服务器上需要下面的设置。
+  首先指定可以访问数据库的客户端 ip。
+#+BEGIN_EXAMPLE
+$ sudo vi /var/lib/pgsql/default/data/pg_hba.conf
+#+END_EXAMPLE
+
+修改防火墙配置，放行 5432 端口的访问。
+#+BEGIN_EXAMPLE
+$ sudo vi /etc/sysconfig/iptables
+.....
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 5432 -j ACCEPT
+.....
+
+$ sudo service iptables restart
+#+END_EXAMPLE
+
+* 数据库的环境变量
+  我的个人电脑上的 PostgreSQL，通常会设置几个环境变量，例如 PG_HOME, PGDATA 等，主要是操作方便，详见 [[https://github.com/bitorb/bitorb/blob/master/dot.bash_profile][~/.bash_profile]] 文件。
+  如果是服务器上的数据库，不建议设置环境变量，原生态命令更环保和安全。
+
+* 启动数据库
+  用 postgres 用户启动数据库，并允许外部客户端通过 5432 端口进行访问，只是本机自用的话就去掉 -i 的启动参数。
+#+BEGIN_EXAMPLE
+$ sudo -u postgres /usr/local/pgsql/default/bin/pg_ctl \
+                   -D /var/lib/pgsql/default/data -o '-i -p 5432' \
+                   -l /var/lib/pgsql/default/pgstartup.log start
+#+END_EXAMPLE
