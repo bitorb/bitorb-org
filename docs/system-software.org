@@ -100,6 +100,7 @@ $ sudo yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
 #+END_EXAMPLE
   编译安装到 /usr/local/bin 目录下，之前系统默认的 Git 通常被安装在 /usr/bin 目录下。
   最后删除系统默认安装的 git，并将当前 session指向新安装的 git，或者重启机器也行。
+  如果是 Fedora，可能需要安装 vimdiff (vim-enhanced) 命令。
 #+BEGIN_EXAMPLE
 $ cd /usr/local/src/git/
 $ sudo make prefix=/usr/local all
@@ -108,6 +109,8 @@ $ sudo make prefix=/usr/local install
 $ sudo yum erase git
 $ hash -r
 $ type git
+
+$ sudo yum install vim-enhanced
 #+END_EXAMPLE
   Mac OSX 下 git 会被包含在 Xcode 中一起被安装，不过版本偏低。要想升级到最新版本，
   可以直接[[http://code.google.com/p/git-osx-installer/][下载]] dmg 文件，根据里面的 README 说明进行安装。或者通过下面命令进行源码编译安装。
@@ -131,7 +134,7 @@ $ type git
 #+BEGIN_EXAMPLE
 $ ln -sf ~/Projects/gaixie/bitorb/dot.gitconfig ~/.gitconfig
 #+END_EXAMPLE
- 
+
 * Emacs
 ** Emacs 编译安装
    作为我使用频率最高的软件，版本升级一定要及时，但从国内 clone 源码库实在是太慢了，只能通过下载最新的源码包进行编译安装。
