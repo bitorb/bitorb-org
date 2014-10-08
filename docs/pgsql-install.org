@@ -5,7 +5,7 @@
 * 编译环境
   Mac OSX 下只要装了 Xcode 就行，所有编译需要的工具和类库都有了。CentOS 下需要安装下面的软件包。
 #+BEGIN_EXAMPLE
-$ sudo yum install make gcc readline-devel zlib-devel
+$ sudo yum install make gcc readline-devel zlib-devel flex bison
 #+END_EXAMPLE
 
 * 下载最新的源码包
@@ -69,14 +69,11 @@ $ sudo vi /etc/sysconfig/iptables
 $ sudo service iptables restart
 #+END_EXAMPLE
 
-* 数据库的环境变量
-  我的个人电脑上的 PostgreSQL，通常会设置几个环境变量，例如 PG_HOME, PGDATA 等，主要是操作方便，详见 [[https://github.com/bitorb/bitorb/blob/master/dot.bash_profile][~/.bash_profile]] 文件。
-  如果是服务器上的数据库，不建议设置环境变量，原生态命令更环保和安全。
-
 * 启动数据库
   用 postgres 用户启动数据库，并允许外部客户端通过 5432 端口进行访问，只是本机自用的话就去掉 -i 的启动参数。
 #+BEGIN_EXAMPLE
-$ sudo -u postgres /usr/local/pgsql/default/bin/pg_ctl \
-                   -D /var/lib/pgsql/default/data -o '-i -p 5432' \
-                   -l /var/lib/pgsql/default/pgstartup.log start
+$ sudo su -l postgres
+$ /usr/local/pgsql/default/bin/pg_ctl \
+    -D /var/lib/pgsql/default/data -o '-i -p 5432' \
+    -l /var/lib/pgsql/default/pgstartup.log start
 #+END_EXAMPLE
