@@ -18,6 +18,13 @@ $ cp id_rsa ~/.ssh
 $ chmod 600 ~/.ssh/id_rsa
 #+END_EXAMPLE
 
+* Linux
+** 修改主机名
+   hostnamectl 命令会在 /etc 目录下生成一个 hostname 文件。
+#+BEGIN_EXAMPLE
+$ hostnamectl set-hostname tomt60p.gaixie.org
+#+END_EXAMPLE
+
 * Mac OSX
 ** 修改 Terminal 窗口风格及显示的主机名
    一直习惯用黑底绿字的终端风格，导出了一个描述文件 Mac-Tommy.terminal 并通过 Dropbox 在我所有的 Mac 上同步。
