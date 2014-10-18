@@ -12,7 +12,7 @@
 
 
 #+ATTR_HTML: :width 120 :style float:left;
-[[file:images/me.depth][file:./images/me.png]]
+[[file:images/me.png]]
 #+TOC: headlines 1
 
 * 
