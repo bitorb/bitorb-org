@@ -9,7 +9,9 @@
 
   在编译 GnuPG 以前，还需要编译安装下面的类库。
 #+BEGIN_EXAMPLE
-$ curl -O ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.13.tar.bz2
+$ curl -O ftp://ftp.gnupg.org/gcrypt/libgpg-error/\
+libgpg-error-1.13.tar.bz2
+
 $ tar xzvf libgpg-error-1.13.tar.bz2
 $ cd libgpg-error-1.13
 $ ./configure && make && sudo make install
@@ -96,7 +98,8 @@ $ sudo rm -rf jdk1.7.0_07.jdk/
 #+BEGIN_EXAMPLE
 $ cd /usr/local/src
 $ sudo git clone https://github.com/git/git.git
-$ sudo yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-CPAN
+$ sudo yum install curl-devel expat-devel gettext-devel \
+                   openssl-devel zlib-devel perl-CPAN
 #+END_EXAMPLE
   编译安装到 /usr/local/bin 目录下，之前系统默认的 Git 通常被安装在 /usr/bin 目录下。
   最后删除系统默认安装的 git，并将当前 session指向新安装的 git，或者重启机器也行。
@@ -149,7 +152,8 @@ $ sudo tar xzvf emacs-24.3.tar.gz
 #+BEGIN_EXAMPLE 
 $ sudo yum groupinstall "Development Tools"
 $ sudo yum install gtk+-devel gtk2-devel
-$ sudo yum install libXpm-devel libpng-devel giflib-devel libtiff-devel libjpeg-devel
+$ sudo yum install libXpm-devel libpng-devel giflib-devel \
+                   libtiff-devel libjpeg-devel
 $ sudo yum install ncurses-devel
 #+END_EXAMPLE
    下面进入解压缩后的源码目录，开始编译，安装，最后做一个执行文件的软链接。
@@ -256,7 +260,8 @@ $ chmod 664 tommy.fossil
 #+BEGIN_EXAMPLE
 $ tar xjvf docbook-xsl-ns-1.78.1.tar.bz2
 $ sudo mv ~/Downloads/docbook-xsl-ns-1.78.1 /usr/local/share/
-$ sudo ln -s /usr/local/share/docbook-xsl-ns-1.78.1 /usr/local/share/docbook-xsl-ns
+$ sudo ln -s /usr/local/share/docbook-xsl-ns-1.78.1 \
+             /usr/local/share/docbook-xsl-ns
 #+END_EXAMPLE
   最后设置环境变量 DOCBOOK_PATH，详见 [[https://github.com/bitorb/bitorb/blob/master/dot.bash_profile][~/.bash_profile]] 文件。
 * Maven
@@ -267,7 +272,8 @@ $ sudo mkdir /usr/local/maven
 $ sudo mv ~/Downloads/apache-maven-3.2.1-bin.tar.gz /usr/local/maven/
 $ cd /usr/local/maven/
 $ sudo tar xzvf apache-maven-3.2.1-bin.tar.gz
-$ sudo ln -sf /usr/local/maven/apache-maven-3.2.1 /usr/local/maven/default
+$ sudo ln -sf /usr/local/maven/apache-maven-3.2.1 \
+              /usr/local/maven/default
 #+END_EXAMPLE
   然后设置环境变量 M2_HOME，详见 [[https://github.com/bitorb/bitorb/blob/master/dot.bash_profile][~/.bash_profile]] 文件。
   最后如果要 deploy 到远程库，需要配置一个 settings.xml 文件，可以直接从 maven 的安装目录复制一个过来修改。

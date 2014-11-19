@@ -54,8 +54,9 @@ M-x gdb
 #+BEGIN_EXAMPLE
 (gdb) run
 Starting program: /home/tommy/hello
-(gdb) Missing separate debuginfos, use: debuginfo-install glibc-2.14.1-6.i686 
-libgcc-4.6.3-2.fc15.i686 libstdc++-4.6.3-2.fc15.i686
+(gdb) Missing separate debuginfos, use: debuginfo-install 
+glibc-2.14.1-6.i686 libgcc-4.6.3-2.fc15.i686 
+libstdc++-4.6.3-2.fc15.i686
 
 $ sudo yum install yum-utils
 $ sudo debuginfo-install glibc libgcc libstdc++

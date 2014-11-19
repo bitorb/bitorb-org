@@ -14,7 +14,7 @@ $ sudo yum install make gcc readline-devel zlib-devel flex bison
 #+BEGIN_EXAMPLE
 $ sudo mkdir /usr/local/src
 $ cd /usr/local/src
-$ sudo curl -O http://ftp.postgresql.org/pub/source/v9.4beta2/postgresql-9.4beta2.tar.gz
+$ sudo curl -O http://ftp.postgresql.org/.../postgresql-9.4beta2.tar.gz
 $ sudo tar xzvf postgresql-9.4beta2.tar.gz
 #+END_EXAMPLE
 
@@ -49,7 +49,8 @@ $ sudo chown _postgres:wheel /var/lib/pgsql
 
 $ sudo -u postgres mkdir /var/lib/pgsql/9.4
 $ sudo -u postgres ln -s /var/lib/pgsql/9.4 /var/lib/pgsql/default
-$ sudo -u postgres /usr/local/pgsql/default/bin/initdb -D /var/lib/pgsql/default/data -U postgres
+$ sudo -u postgres /usr/local/pgsql/default/bin/initdb \
+                   -D /var/lib/pgsql/default/data -U postgres
 #+END_EXAMPLE
 
 * 数据库访问设置
