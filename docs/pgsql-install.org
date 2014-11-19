@@ -76,3 +76,10 @@ $ sudo -i -u postgres /usr/local/pgsql/default/bin/pg_ctl \
                       -D /var/lib/pgsql/default/data -o '-i -p 5432' \
                       -l /var/lib/pgsql/default/pgstartup.log start
 #+END_EXAMPLE
+
+Mac OSX 下启动命令要去掉 sudo 的 -i 参数。
+#+BEGIN_EXAMPLE
+$ sudo -u _postgres /usr/local/pgsql/default/bin/pg_ctl \
+                    -D /var/lib/pgsql/default/data -o '-i -p 5432' \
+                    -l /var/lib/pgsql/default/pgstartup.log start
+#+END_EXAMPLE
