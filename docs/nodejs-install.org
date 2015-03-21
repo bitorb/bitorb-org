@@ -1,0 +1,9 @@
+#+TITLE: Node.js Installation
+#+AUTHOR: Tommy Wang
+#+OPTIONS: ^:nil
+
+* Mac OSX 系统下的安装
+  先确保已 [[./system-homebrew.org][安装 Homebrew]]，然后再安装 node.js。
+#+BEGIN_EXAMPLE
+$ brew install node
+#+END_EXAMPLE

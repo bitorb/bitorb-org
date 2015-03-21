@@ -4,6 +4,7 @@
 + System
   + [[./system-setup.org][重装系统时习惯的设置]]
   + [[./system-software.org][常用软件的安装与配置]]
+  + [[./system-homebrew.org][Homebrew 的安装配置及使用]]
 + Emacs
   + [[./emacs-keybindings.org][Emacs 常用快捷键]]
   + [[./emacs-debugging.org][Emacs 下程序的调试]]
@@ -11,3 +12,5 @@
   + [[./pgsql-install.org][源码编译安装 PostgreSQL]]
 + Http Server
   + [[./apache-install.org][Apache 的安装及基本配置]]
++ Nodej.s
+  + [[./nodejs-install.org][Nodejs 及相关软件的安装]]

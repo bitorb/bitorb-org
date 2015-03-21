@@ -1,0 +1,40 @@
+#+TITLE: Homebrew Installation
+#+AUTHOR: Tommy Wang
+#+OPTIONS: ^:nil
+
+* 安装配置
+  这个 Mac 下大名鼎鼎的套件管理器，曾经一度比较排斥，觉得自己源码编译安装的软件更加知根知底，
+  但时间久了，发现有些软件如果不用 homebrew 安装实在太麻烦了。
+
+  Mac 默认已经装了 Ruby，所以参照 [[http://brew.sh/][官网主页]] 教程，一条命令实现安装，安装到哪里，怎么安装提示的也很清楚。
+#+BEGIN_EXAMPLE
+$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+==> This script will install:
+/usr/local/bin/brew
+/usr/local/Library/...
+/usr/local/share/man/man1/brew.1
+==> The following directories will be made group writable:
+/usr/local/.
+/usr/local/bin
+/usr/local/include
+/usr/local/lib
+/usr/local/share
+/usr/local/share/locale
+/usr/local/share/man
+/usr/local/share/man/man1
+/usr/local/share/man/man7
+/usr/local/share/info
+/usr/local/share/aclocal
+==> The following directories will have their group set to admin:
+/usr/local/.
+/usr/local/bin
+/usr/local/include
+/usr/local/lib
+/usr/local/share
+/usr/local/share/locale
+/usr/local/share/man
+/usr/local/share/man/man1
+/usr/local/share/man/man7
+/usr/local/share/info
+/usr/local/share/aclocal
+#+END_EXAMPLE
