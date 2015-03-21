@@ -7,3 +7,8 @@
 #+BEGIN_EXAMPLE
 $ brew install node
 #+END_EXAMPLE
+
+* 使用 npm 进行其它软件包安装
+#+BEGIN_EXAMPLE
+$ npm install -g bower
+#+END_EXAMPLE
