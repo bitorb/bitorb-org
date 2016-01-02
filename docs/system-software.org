@@ -4,55 +4,49 @@
 
 * GnuPG
   几乎所有的 Linux 发行版默认都会自动安装 GnuPG，但 Mac OSX 下需要自己手动安装，这里我采用的是源码编译的方式。
-  由于采用源码编译，首先我们要安装 Xcode，这里的装的 Xcode 版本是 5.0.2，装好后启动一下，会自动安装
-  command line tools。
+  由于采用源码编译，首先我们要安装 Xcode，装好后启动一下，会自动安装  command line tools。
 
-  在编译 GnuPG 以前，还需要编译安装下面的类库。
+  如果要编译 GnuPG 2.x 版本，还需先编译安装下面的类库。
 #+BEGIN_EXAMPLE
-$ curl -O ftp://ftp.gnupg.org/gcrypt/libgpg-error/\
-libgpg-error-1.13.tar.bz2
+$ curl -O ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.6.4.tar.bz2
+$ curl -O ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.4.2.tar.bz2
+$ curl -O ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.3.3.tar.bz2
+$ curl -O ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.21.tar.bz2
 
-$ tar xzvf libgpg-error-1.13.tar.bz2
-$ cd libgpg-error-1.13
+$ tar xjvf libgcrypt-1.6.4.tar.bz2 -C /usr/local/src/
+$ tar xjvf libassuan-2.4.2.tar.bz2 -C /usr/local/src/
+$ tar xjvf libksba-1.3.3.tar.bz2 -C /usr/local/src/
+$ tar xjvf libgpg-error-1.21.tar.bz2 -C /usr/local/src/
+
+$ cd /usr/local/src/libgcrypt-1.6.4
 $ ./configure && make && sudo make install
 
-$ curl -O ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.6.2.tar.bz2
-$ tar xzvf libgcrypt-1.6.2.tar.bz2
-$ cd libgcrypt-1.6.2
-$ ./configure --disable-asm
-$ make && sudo make install
-
-$ curl -O ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.1.2.tar.bz2
-$ tar xzvf libassuan-2.1.2.tar.bz2
-$ cd libassuan-2.1.2
+$ cd /usr/local/src/libassuan-2.4.2
 $ ./configure && make && sudo make install
 
-$ curl -O ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.3.0.tar.bz2
-$ tar xzvf libksba-1.3.0.tar.bz2
-$ cd libksba-1.3.0
+$ cd /usr/local/src/libksba-1.3.3
 $ ./configure && make && sudo make install
 
-$ curl -O ftp://ftp.gnu.org/gnu/pth/pth-2.0.7.tar.gz
-$ tar xzvf pth-2.0.7.tar.gz 
-$ cd pth-2.0.7
+$ cd /usr/local/src/libgpg-error-1.21
 $ ./configure && make && sudo make install
 #+END_EXAMPLE
 
-  最后编译安装 gnupg，版本为 1.4.18。
+  最后编译安装 gnupg，如果版本为 1.x 则不需要上面的类库，下载后要 sha 比对一下，有时翻墙下载的文件会被修改用不了。
 #+BEGIN_EXAMPLE
-$ curl -O ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.18.tar.bz2
-$ openssl sha1 gnupg-1.4.18.tar.bz2
-$ tar xzvf gnupg-1.4.18.tar.bz2
-$ cd gnupg-1.4.18
+$ curl -O ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.20.tar.bz2
+$ openssl sha1 gnupg-1.4.20.tar.bz2
+
+$ tar xjvf gnupg-1.4.20.tar.bz2 -C /usr/local/src/
+$ cd /usr/local/src/gnupg-1.4.20
 $ ./configure
 $ make
 $ make check
 $ sudo make install
 #+END_EXAMPLE
-  装好后就可以导入我的私钥和公钥了。导入后记得查看一下。
+  装好后就可以从优盘中导入我的私钥和公钥了。导入后记得查看一下。
 #+BEGIN_EXAMPLE
-$ gpg --allow-secret-key-import --import secret.gpg.key
-$ gpg --import public.gpg.key
+$ gpg --allow-secret-key-import --import /Volumes/NO\ NAME/secret.gpg.key
+$ gpg --import /Volumes/NO\ NAME/public.gpg.key
 $ gpg --list-keys
 $ gpg --list-secret-keys
 #+END_EXAMPLE

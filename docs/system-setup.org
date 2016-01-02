@@ -18,6 +18,14 @@ $ cp id_rsa ~/.ssh
 $ chmod 600 ~/.ssh/id_rsa
 #+END_EXAMPLE
 
+** 建立一个用来进行源码编译的目录
+   别忘了为此目录上权限。
+#+BEGIN_EXAMPLE
+$ sudo mkdir /usr/local/src
+$ sudo chown $USER /usr/local/src/
+$ sudo chmod u+rwx /usr/local/src/
+#+END_EXAMPLE
+
 * Linux
 ** 修改主机名
    hostnamectl 命令会在 /etc 目录下生成一个 hostname 文件。
@@ -26,10 +34,7 @@ $ hostnamectl set-hostname tomt60p.gaixie.org
 #+END_EXAMPLE
 
 * Mac OSX
-** 修改 Terminal 窗口风格及显示的主机名
-   一直习惯用黑底绿字的终端风格，导出了一个描述文件 Mac-Tommy.terminal 并通过 Dropbox 在我所有的 Mac 上同步。
-   需要导入就直接打开：终端 --> 偏好设置 --> 设置 --> 描述文件 --> 导入
-
+** 修改显示的主机名
    不太喜欢 Mac 下 Terminal 窗口显示的主机名，如果是 MacBook Pro 我会用下面命令把它改为 tommbp.local，若不加
    .local 的后缀，emacs 启动相当的慢。
 #+BEGIN_EXAMPLE
