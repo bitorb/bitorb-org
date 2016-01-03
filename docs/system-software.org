@@ -185,7 +185,7 @@ $ git clone git://jblevins.org/git/markdown-mode.git
   个人习惯，不喜欢开源项目的目录名有大写字符。
 #+BEGIN_EXAMPLE
 $ cd ~/Projects/others/
-$ git clone git://github.com/russel/Emacs-Groovy-Mode.git groovy-mode
+$ git clone git://github.com/Groovy-Emacs-Modes/groovy-emacs-modes.git groovy-mode
 #+END_EXAMPLE
    参考文档：
    + [[http://groovy.codehaus.org/Emacs+Groovy+Mode][Emacs Groovy Mode]]
