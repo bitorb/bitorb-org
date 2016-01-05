@@ -9,24 +9,21 @@ $ sudo yum install make gcc readline-devel zlib-devel flex bison
 #+END_EXAMPLE
 
 * 下载最新的源码包
-  Linux 下我喜欢把一些大软件的源码包下载到 /usr/local/src 目录下，Mac OSX 默认没有这个目录，需要创建一个，
-  然后从 PostgreSQL [[http://www.postgresql.org/ftp/source/][官网下载]] 最新的源码包。
+  Linux 下我喜欢把源码包下载到 /usr/local/src 目录下，Mac OSX 默认没有这个目录，需要创建一个，
+  参见：[[./system-setup.org][建立一个用来进行源码编译的目录]]。然后从 PostgreSQL [[http://www.postgresql.org/ftp/source/][官网下载]] 最新的源码包。
 #+BEGIN_EXAMPLE
-$ sudo mkdir /usr/local/src
-$ cd /usr/local/src
-$ sudo curl -O http://ftp.postgresql.org/.../postgresql-9.4beta2.tar.gz
-$ sudo tar xzvf postgresql-9.4beta2.tar.gz
+$ curl -O https://ftp.postgresql.org/pub/source/v9.4.5/postgresql-9.4.5.tar.bz2
+$ tar xjvf postgresql-9.4.5.tar.bz2 -C /usr/local/src
 #+END_EXAMPLE
 
 * 编译安装到指定目录
-  将 9.4beta2 这个版本编译并安装到 /usr/local/pgsql/9.4beta2 这个目录下，然后为该目录创建一个 default的软链接，表示当先正在使用的数据库版本。
+  将 9.4.5 这个版本编译并安装到 /usr/local/pgsql/9.4.5 这个目录下，然后为该目录创建一个 default的软链接，表示当先正在使用的数据库版本。
 #+BEGIN_EXAMPLE
-$ cd /usr/local/src/postgresql-9.4beta2
-$ sudo ./configure --prefix=/usr/local/pgsql/9.4beta2
-$ sudo make
+$ cd /usr/local/src/postgresql-9.4.5
+$ ./configure --prefix=/usr/local/pgsql/9.4.5
+$ make
 $ sudo make install
-$ sudo make clean
-$ sudo ln -s /usr/local/pgsql/9.4beta2 /usr/local/pgsql/default
+$ sudo ln -s /usr/local/pgsql/9.4.5 /usr/local/pgsql/default
 #+END_EXAMPLE
 
 * 创建一个数据库管理员用户
@@ -47,6 +44,7 @@ $ sudo chown postgres:postgres /var/lib/pgsql
 # 如果是 Mac OSX 应该是 _postgres:wheel 
 $ sudo chown _postgres:wheel /var/lib/pgsql
 
+# 如果是 Mac OSX 要将 sudo -u 后的 postgres 改为 _postgres，但最后的 -U postgres 不变
 $ sudo -u postgres mkdir /var/lib/pgsql/9.4
 $ sudo -u postgres ln -s /var/lib/pgsql/9.4 /var/lib/pgsql/default
 $ sudo -u postgres /usr/local/pgsql/default/bin/initdb \

@@ -19,7 +19,8 @@ $ chmod 600 ~/.ssh/id_rsa
 #+END_EXAMPLE
 
 ** 建立一个用来进行源码编译的目录
-   别忘了为此目录上权限。
+   Linux 通常默认已经有 /usr/local/src 目录，只需设下权限，以后编译可少输几个 sudo。
+   Mac OSX 默认没有，需要创建一个。
 #+BEGIN_EXAMPLE
 $ sudo mkdir /usr/local/src
 $ sudo chown $USER /usr/local/src/
