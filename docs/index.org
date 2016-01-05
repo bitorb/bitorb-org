@@ -12,5 +12,5 @@
   + [[./pgsql-install.org][源码编译安装 PostgreSQL]]
 + Http Server
   + [[./apache-install.org][Apache 的安装及基本配置]]
-+ Nodej.s
++ Nodejs
   + [[./nodejs-install.org][Nodejs 及相关软件的安装]]
