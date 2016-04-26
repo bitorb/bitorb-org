@@ -1,0 +1,14 @@
+#+TITLE: System Make USB Installer
+#+AUTHOR: Tommy Wang
+#+OPTIONS: ^:nil
+
+* 制作 OSX 10.11 El Capitan 系统安装优盘
+1. 先进入 Mac Apple Store 下载一个最新版本的 El Capitan。同时准备一个至少 8G 容量的优盘。
+2. 插入优盘，假设优盘的名字为 Untitled，终端运行下面命令：
+#+BEGIN_EXAMPLE
+# sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install\ OS\ X\ El\ Capitan.app --nointeraction
+#+END_EXAMPLE
+createinstallmedia 程序会将优盘的名字修改为 Install OS X El Capitan。处理过程比较慢，有时需要20分钟左右(USB2.0接口)。
+3. 优盘插着重启机器，启动时按 Option 键，直到出引导界面，选择刚制作好的优盘进行引导并安装。
+** 参考文档
++ [[http://www.macworld.com/article/2981585/operating-systems/how-to-make-a-bootable-os-x-10-11-el-capitan-installer-drive.html][How to make a bootable OS X 10.11 El Capitan installer drive]]
