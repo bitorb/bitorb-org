@@ -1,6 +1,8 @@
-#+TITLE: Software Installation
+#+TITLE: ~ / 文档 / 常用软件的安装与配置
 #+AUTHOR: Tommy Wang
 #+OPTIONS: ^:nil
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" href="../css/org.css">
 
 * GnuPG
   几乎所有的 Linux 发行版默认都会自动安装 GnuPG，但 Mac OSX 下需要自己手动安装，这里我采用的是源码编译的方式。

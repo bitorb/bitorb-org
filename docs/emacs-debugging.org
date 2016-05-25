@@ -1,6 +1,8 @@
-#+TITLE: Debugging With Emacs
+#+TITLE: ~ / 文档 / Emacs 下程序的调试
 #+AUTHOR: Tommy Wang
 #+OPTIONS: ^:nil
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" href="../css/org.css">
 
 * 使用 GDB 调试 C 或 C++ 程序
   GDB 是 GNU 的调试器，它可以让您查看程序的内部结构、打印变量值、

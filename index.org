@@ -1,13 +1,14 @@
-#+TITLE: Tommy Wang's Home Page
+#+TITLE: ~/
 #+AUTHOR: Tommy Wang
 #+OPTIONS: num:nil toc:nil
 
-#+HTML_HEAD_EXTRA: <style type="text/css">
-#+HTML_HEAD_EXTRA: <!--/*--><![CDATA[/*><!--*/
-#+HTML_HEAD_EXTRA: h1.title, #table-of-contents h2 { display:none; }
-#+HTML_HEAD_EXTRA: #text-table-of-contents {margin-left: 100px; height:160px; }
-#+HTML_HEAD_EXTRA: #text-table-of-contents ul { list-style-type: none; }
-#+HTML_HEAD_EXTRA: /*]]>*/-->
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" href="css/org.css">
+#+HTML_HEAD_EXTRA: <style>
+#+HTML_HEAD_EXTRA: #text-table-of-contents {margin-left: 120px; height:170px; }
+#+HTML_HEAD_EXTRA: #text-table-of-contents ul {padding-top: 8px;}
+#+HTML_HEAD_EXTRA: #table-of-contents h2 {display: none;}
+#+HTML_HEAD_EXTRA: figure, figure p { margin:0;}
+#+HTML_HEAD_EXTRA: .outline-text-2 .org-ul { padding-left:15px;}
 #+HTML_HEAD_EXTRA: </style>
 
 
@@ -24,7 +25,7 @@
 
 
 本站的部分外链有时可能无法正常访问，希望你有点崂山道士的本领，我甚至觉得这是目前国内技术同行必须掌握的一项基本技能。
-* 目前业余时间的开销
+* 业余爱好
   + 遛狗，长假时与家人出游。
   + 看小说，偶尔看电视，没事就整理我的几台电脑，更多的时间是发呆。
 * 程序与文档
@@ -43,3 +44,4 @@
 
 
   有一些篇幅不是特别长，需要长期维护的技术文档，请 [[./docs/index.org][从这里进入]]。
+

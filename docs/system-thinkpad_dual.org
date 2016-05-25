@@ -1,36 +1,41 @@
-#+TITLE: System ThinkPad Dual
+#+TITLE: ~ / 文档 / ThinkPad 笔记本双系统引导设置
 #+AUTHOR: Tommy Wang
 #+OPTIONS: ^:nil
 
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" href="../css/org.css">
+#+HTML_HEAD_EXTRA: <style>
+#+HTML_HEAD_EXTRA: .org-ol li { margin-bottom:6px;}
+#+HTML_HEAD_EXTRA: </style>
+
 * 老款 Thinkpad 用 ntldr 方式装 WinXP 和 Debian jessie 双系统 
-1. 从我的百度云账户下载相应笔记本的恢复镜像文件并刻盘。
+1. 首先下载相应笔记本的恢复镜像文件并刻盘。
 2. 如果是 SATA 接口的硬盘 （T60, X60），开机 F1 进入机器的 BIOS，Config -> Serial ATA(SATA) 项，
-把 AHCI 改为 Compatibility。因为 XP 默认不支持 SATA 硬盘，初始安装要用兼容模式。
+   把 AHCI 改为 Compatibility。因为 XP 默认不支持 SATA 硬盘，初始安装要用兼容模式。
 3. 直接光盘引导安装好系统。
 4. XP 系统装好后，从云盘上下载安装相应的补丁（SP3）和工具（RAR等）。
 5. SATA 接口的机器需要下载安装 IntelAHCI 驱动，官网说需要 Microsoft.NET 3.0以上，但好像 2.0 也能用。
 6. 驱动装好后重启，进入 BIOS ，改回 AHCI，毕竟 SATA 速度要快不少。
-7. 云盘下载并安装 PartitionMagic-v8.05，这个可以在 XP 上正常运行的版本我找了好久才找到。
-装好后分出点空间用来装 Linux，如果硬盘够大，也可以再分个 D盘让 XP 用。
+7. 云盘下载并安装 PartitionMagic-v8.05，这个可以在 XP 上正常运行的版本我可是找了好久。
+   装好后分出点空间用来装 Linux，如果硬盘够大，也可以再分个 D盘让 XP 用。
 8. 安装 Debian jessie 32位版本，前面全部正常安装，分区只修改留给 Linux 的分区就行，注意引导区加 Boot Flag 标识，
-一直到安装 GRUB 的部分，一定要注意把 GRUB 安装到 Linux 的主分区。例如： WinXP 系统 C 盘是 sda1, D 盘是 sda2, 
-Linux 主分区（挂载点是  /boot 或者是 /) 是 sda3, 那么 GRUB 要手动指定安装在 /dev/sda3 上。否则会安装在 MBR 上，
-从而覆盖掉 ThinkPad 的引导程序，导致 ThinkVantage 恢复键失效。
+   一直到安装 GRUB 的部分，一定要注意把 GRUB 安装到 Linux 的主分区。例如： WinXP 系统 C 盘是 sda1, D 盘是 sda2, 
+   Linux 主分区（挂载点是  /boot 或者是 /) 是 sda3, 那么 GRUB 要手动指定安装在 /dev/sda3 上。否则会安装在 MBR 上，
+   从而覆盖掉 ThinkPad 的引导程序，导致 ThinkVantage 恢复键失效。
 9. Debian 装好后， 系统会根据之前 Boot Flag 标示进入相应的分区并加载引导程序。这里注意如果你的 WinXP 和 Linux
-分区都有 Boot Flag 可能会报错，需要找个 Linux Live 盘进入把 WinXP 的标识去掉。
+   分区都有 Boot Flag 可能会报错，需要找个 Linux Live 盘进入把 WinXP 的标识去掉。
 10. 进入 Debian 系统后，用root 用户使用 dd 命令把引导区的头 512 字节导出来让 WinXP 执行。 
-#+BEGIN_EXAMPLE
-# dd bs=512 count=1 if=/dev/sda4 of=bootsect.bin
-#+END_EXAMPLE
-这里的 /dev/sda4 就是 GRUB 安装的分区，用 U 盘备份 bootsect.bin 文件。
+   #+BEGIN_EXAMPLE
+   # dd bs=512 count=1 if=/dev/sda4 of=bootsect.bin
+   #+END_EXAMPLE
+   这里的 /dev/sda4 就是 GRUB 安装的分区，用 U 盘备份 bootsect.bin 文件。
 11. 用 fdisk 命令去掉 linux 的 Boot flag，加到 WinXP 分区上去。重启机器。
-#+BEGIN_EXAMPLE
-# fdisk /dev/sda
-#+END_EXAMPLE
+   #+BEGIN_EXAMPLE
+   # fdisk /dev/sda
+   #+END_EXAMPLE
 12. 正常情况下会进入 XP 系统，把 bootsect.bin 复制到 C:\ 盘根目录。文件夹选项->查看页中勾掉 “影藏受保护的操作系统文件（推荐）” 
-并选中 “显示所有文件和文件夹”
+   并选中 “显示所有文件和文件夹”
 13. 把 C:\ 盘根目录下的 BOOT.ini 文件属性去掉只读，用记事本打开此文件。在最后加上一行：
-#+BEGIN_EXAMPLE
-# c:\bootsect.bin="Debian GNU/Linux"
-#+END_EXAMPLE
-然后重新把只读属性，文件夹选项该回去。重启电脑就可以看到双系统引导菜单，并且 ThinkVantage 恢复键也可以正常使用。
+   #+BEGIN_EXAMPLE
+   # c:\bootsect.bin="Debian GNU/Linux"
+   #+END_EXAMPLE
+   然后重新把只读属性，文件夹选项该回去。重启电脑就可以看到双系统引导菜单，并且 ThinkVantage 恢复键也可以正常使用。

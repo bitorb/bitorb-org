@@ -1,6 +1,8 @@
-#+TITLE: Homebrew Installation
+#+TITLE: ~ / 文档 / Homebrew 的安装配置与使用
 #+AUTHOR: Tommy Wang
 #+OPTIONS: ^:nil
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" href="../css/org.css">
 
 * 安装配置
   这个 Mac 下大名鼎鼎的套件管理器，曾经一度比较排斥，觉得自己源码编译安装的软件更加知根知底，

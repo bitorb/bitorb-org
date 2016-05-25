@@ -1,0 +1,103 @@
+body {
+    font-family: arial, sans-serif;
+}
+
+/* .container
+   =========================================================== */
+
+.container {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 8px 15px;
+}
+
+.container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* #preamble 对应 gxo.css 的 header
+   =========================================================== */
+
+#preamble {
+    background-color: #000000;
+}
+
+#preamble .container .logo {
+    float: left;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    text-decoration: none;
+    padding-top: 6px;
+    padding-right: 4px;
+}
+
+#preamble .container .wang {
+    color: lightblue;
+}
+
+/* #content 对应 gxo.css 的 main + container
+   =========================================================== */
+
+#content {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 0 15px 20px;
+}
+
+#content:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#content header {
+    border-top: 10px solid #005ea5;
+}
+
+/**
+ * 原有的文档标题用于在页头显示当前页面的目录位置
+ */
+#content header h1 {
+    margin-top: 0;
+    font-size: 0.8em;
+    padding-top: 3px;
+    font-weight: normal;
+}
+
+/**
+ * 文档目录已经有章节数字，前面的黑点不协调
+ */
+#table-of-contents ul {
+    list-style-type: none;
+}
+
+.outline-text-2 {
+    line-height: 1.3em;
+}
+
+.outline-2 {
+    border-bottom: 3px solid #808080;
+}
+
+pre {
+    background-color: #EEEEEE;
+    font-size: 85%;
+    padding: 4px;
+    line-height: normal;
+}
+
+/* #postamble 对应 gxo.css 的 footer
+   =========================================================== */
+
+#postamble {
+    border-top: 10px solid #005ea5;
+    background-color: #dee0e2;
+    font-size: 87.5%;
+}
+
+#postamble p {
+    margin: 0;
+}

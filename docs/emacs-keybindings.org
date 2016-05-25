@@ -1,6 +1,8 @@
-#+TITLE: Emacs Key Bindings
+#+TITLE: ~ / 文档 / Emacs 常用快捷键
 #+AUTHOR: Tommy Wang
 #+OPTIONS: num:nil
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" href="../css/org.css">
 
 * 已绑定快捷键
 | keys        | scope        | description                                                              |

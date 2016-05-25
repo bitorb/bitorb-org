@@ -1,6 +1,8 @@
-#+TITLE: PostgreSQL Installation
+#+TITLE: ~ / 文档 / 源码编译安装 PostgreSQL
 #+AUTHOR: Tommy Wang
 #+OPTIONS: ^:nil
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" href="../css/org.css">
 
 * 编译环境
   Mac OSX 下只要装了 Xcode 就行，所有编译需要的工具和类库都有了。CentOS 下需要安装下面的软件包。

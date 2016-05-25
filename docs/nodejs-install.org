@@ -1,6 +1,8 @@
-#+TITLE: Node.js Installation
+#+TITLE: ~ / 文档 / Nodejs 及相关软件的安装
 #+AUTHOR: Tommy Wang
 #+OPTIONS: ^:nil
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" href="../css/org.css">
 
 * Mac OSX 系统下的安装
   先确保已 [[./system-homebrew.org][安装 Homebrew]]，然后再安装 node.js。

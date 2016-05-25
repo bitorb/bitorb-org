@@ -1,6 +1,8 @@
-#+TITLE: Apache Installation
+#+TITLE: ~ / 文档 / Apache 的安装与基本配置
 #+AUTHOR: Tommy Wang
 #+OPTIONS: ^:nil
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" href="../css/org.css">
 
 * Mac OSX 系统下的安装及配置
   Mac OSX 系统默认已经安装好了 apache ，可以直接用下面的命令启动。
