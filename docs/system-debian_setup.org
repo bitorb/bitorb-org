@@ -1,0 +1,62 @@
+#+TITLE: ~ / 文档 / Debian 基本设置
+#+AUTHOR: Tommy Wang
+#+OPTIONS: ^:nil
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" href="../css/org.css">
+
+* 显卡和声卡驱动
+  办公室用的台式机装了 Debian 8.4 mate 桌面版，需要手动安装显卡驱动。需要配置 non-free 安装源。
+#+BEGIN_EXAMPLE
+$ sudo vi /etc/apt/sources.list
+# 文件后面加上下面两行
+
+# Debian 8 "Jessie"
+deb http://httpredir.debian.org/debian/ jessie main contrib non-free
+#+END_EXAMPLE
+
+然后直接安装，最后一行的 firmware-realtek 是声卡驱动，如果不装开机时老有个警告。
+#+BEGIN_EXAMPLE
+$ sudo aptitude update
+$ sudo aptitude install firmware-linux-nonfree libgl1-mesa-dri xserver-xorg-video-ati
+$ sudo aptitude install firmware-realtek
+#+END_EXAMPLE
+
+* 配置 VPN
+  mate 桌面的 network-manager 默认不支持 pptp 和 vpnc，通过下面命令安装。 
+#+BEGIN_EXAMPLE
+$ sudo aptitude install network-manager-pptp-gnome
+$ sudo aptitude install network-manager-vpnc-gnome
+#+END_EXAMPLE
+
+装好后就可以通过 network-manager 图形界面配置和使用 vpn了。也可以直接安装 vpnc ，然后命令行方式使用。
+#+BEGIN_EXAMPLE
+$ sudo aptitude install vpnc
+#+END_EXAMPLE
+参照 ／etc/vpnc/default.conf 新建一个自己的配置，如 hpidc.conf
+#+BEGIN_EXAMPLE
+$ sudo vi /etc/vpnc/hpidc.conf
+#+END_EXAMPLE
+如果要同时访问内网和外网，修改下面的文件
+#+BEGIN_EXAMPLE
+$ sudo vi /etc/vpnc/vpnc-script
+
+# 找到 FIXMEs: 后面加一行，如下：
+# FIXMEs:
+INTERNAL_IP4_DNS=
+#+END_EXAMPLE
+通过下面命令连接和断开 vpnc 
+#+BEGIN_EXAMPLE
+$ sudo vpnc hpidc
+$ sudo vpnc-disconnect
+#+END_EXAMPLE
+
+参考文档
+  + [[https://bitorb.wordpress.com/2011/09/02/fedora-%25E4%25B8%258A%25E5%25AE%2589%25E8%25A3%2585%25E6%2594%25AF%25E6%258C%2581-ipsec-%25E7%259A%2584-vpn-%25E5%25AE%25A2%25E6%2588%25B7%25E7%25AB%25AF/][fedora-上安装支持-ipsec-的-vpn-客户端]]
+* 中文输入法
+  系统装的是英文环境，中文输入法需要单独安装。
+#+BEGIN_EXAMPLE
+$ sudo aptitude install ibus-pinyin
+#+END_EXAMPLE
+装完后重启机器，进入 Preferences -> iBus Preferences -> Input Method 选择 Chinese - Pinyin，
+然后点击 Preferences 按钮，在 Pinyin mode 标签页里，取消选择 Enable correct pinyin。
+

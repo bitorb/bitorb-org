@@ -74,19 +74,18 @@ body {
     list-style-type: none;
 }
 
-.outline-text-2 {
-    line-height: 1.3em;
-}
-
+/**
+ * 一级章节底部加分隔线并适当留白。参考 gxo.css 的 hr 定义
+ */
 .outline-2 {
-    border-bottom: 3px solid #808080;
+    border-bottom: 5px solid #808080;
+    padding-bottom: 15px;
 }
 
 pre {
     background-color: #EEEEEE;
     font-size: 85%;
     padding: 4px;
-    line-height: normal;
 }
 
 /* #postamble 对应 gxo.css 的 footer
