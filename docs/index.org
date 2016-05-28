@@ -6,8 +6,6 @@
 #+HTML_HEAD_EXTRA: @media (min-width: 641px) {#content .org-ul {float: left;width: 33.33333%;}
 #+HTML_HEAD_EXTRA: #content li .org-ul {float: none;width: auto;}}
 #+HTML_HEAD_EXTRA: #content .org-ul {padding: 0;list-style-type: none;}
-#+HTML_HEAD_EXTRA: #content .org-ul li {font-weight:bold}
-#+HTML_HEAD_EXTRA: #content .org-ul .org-ul li {margin-bottom: 3px;font-weight:normal;}
 #+HTML_HEAD_EXTRA: #content .org-ul .org-ul {margin-top: 6px;margin-bottom: 20px;}
 #+HTML_HEAD_EXTRA: </style>
 

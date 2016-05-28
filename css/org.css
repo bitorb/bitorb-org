@@ -1,5 +1,5 @@
 body {
-    font-family: arial, sans-serif;
+    font-family: sans-serif;
 }
 
 /* .container
@@ -27,7 +27,6 @@ body {
 #preamble .container .logo {
     float: left;
     color: white;
-    font-weight: bold;
     font-size: 24px;
     text-decoration: none;
     padding-top: 6px;
@@ -64,7 +63,13 @@ body {
     margin-top: 0;
     font-size: 0.8em;
     padding-top: 3px;
-    font-weight: normal;
+}
+
+/**
+ * sans-serif 字体中文的 li 间距太小
+ */
+li {
+    margin-bottom: 5px;
 }
 
 /**

@@ -3,9 +3,6 @@
 #+OPTIONS: ^:nil
 
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" href="../css/org.css">
-#+HTML_HEAD_EXTRA: <style>
-#+HTML_HEAD_EXTRA: .org-ol li { margin-bottom:6px;}
-#+HTML_HEAD_EXTRA: </style>
 
 * 老款 Thinkpad 用 ntldr 方式装 WinXP 和 Debian jessie 双系统 
 1. 首先下载相应笔记本的恢复镜像文件并刻盘。
