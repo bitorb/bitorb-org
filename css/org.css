@@ -1,5 +1,6 @@
 body {
     font-family: sans-serif;
+    line-height: 1.3em;
 }
 
 /* .container
@@ -63,13 +64,6 @@ body {
     margin-top: 0;
     font-size: 0.8em;
     padding-top: 3px;
-}
-
-/**
- * sans-serif 字体中文的 li 间距太小
- */
-li {
-    margin-bottom: 5px;
 }
 
 /**
