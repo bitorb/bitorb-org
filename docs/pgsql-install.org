@@ -10,6 +10,16 @@
 $ sudo yum install make gcc readline-devel zlib-devel flex bison
 #+END_EXAMPLE
 
+如果是从 git 仓库 checkout 出的源码，还需要额外安装下面两个包：
+#+BEGIN_EXAMPLE
+$ sudo yum install flex bison
+#+END_EXAMPLE
+
+Debian 下通过下面命令安装编译需要的软件包：
+#+BEGIN_EXAMPLE
+$ sudo aptitude install make gcc libreadline-dev zlib1g-dev
+#+END_EXAMPLE
+
 * 下载最新的源码包
   Linux 下我喜欢把源码包下载到 /usr/local/src 目录下，Mac OSX 默认没有这个目录，需要创建一个，
   参见：[[./system-setup.org][建立一个用来进行源码编译的目录]]。然后从 PostgreSQL [[http://www.postgresql.org/ftp/source/][官网下载]] 最新的源码包。
@@ -72,6 +82,13 @@ $ sudo service iptables restart
 
 * 启动数据库
   用 postgres 用户启动数据库，并允许外部客户端通过 5432 端口进行访问，只是本机自用的话就去掉 -i 的启动参数。
+#+BEGIN_EXAMPLE
+$ sudo -u postgres /usr/local/pgsql/default/bin/pg_ctl \
+                   -D /var/lib/pgsql/default/data -o '-i -p 5432' \
+                   -l /var/lib/pgsql/default/pgstartup.log start
+#+END_EXAMPLE
+
+正式数据库服务器的 postgres 用户会有自己的 HOME 目录，可以通过下面命令启动
 #+BEGIN_EXAMPLE
 $ sudo -i -u postgres /usr/local/pgsql/default/bin/pg_ctl \
                       -D /var/lib/pgsql/default/data -o '-i -p 5432' \
