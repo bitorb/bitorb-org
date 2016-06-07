@@ -69,6 +69,11 @@ $ sudo ln -sf /usr/java/jdk1.7.0_25/ /usr/java/default
 #+BEGIN_EXAMPLE
 $ ln -sf ~/Projects/gaixie/bitorb/dot.bash_profile ~/.bash_profile
 #+END_EXAMPLE
+需要注意的是 Debian 下 .bash_profile 只能在 login shell 下被加载，也就是通过 CTRL+ALT+Fn 切换到交互式终端进行进行登录才会被加载。
+在图形界面的终端下需要手动加载：
+#+BEGIN_EXAMPLE
+$ source ~/.bash_profile
+#+END_EXAMPLE
 
   Mac OSX 下只需 [[http://www.oracle.com/technetwork/java/javase/downloads/index.html][官网下载]] 相应的 dmg 文件，然后按官方的安装教程进行安装，详细过程见参考文档。安装完成后，使用 java_home 命令运行其它的 JDK 版本：
 #+BEGIN_EXAMPLE
