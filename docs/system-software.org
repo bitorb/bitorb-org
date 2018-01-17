@@ -231,6 +231,11 @@ $ git clone git://github.com/yoshiki/yaml-mode.git
 $ cd ~/Projects/others/
 $ git clone git@github.com:fgallina/multi-web-mode.git
 #+END_EXAMPLE
+  multi-web 模式对 nodejs, reactjs 开发支持的不好，换一个评价好的 web-mode。
+#+BEGIN_EXAMPLE
+$ cd ~/Projects/others/
+$ git clone git@github.com:fxbois/web-mode.git
+#+END_EXAMPLE
 ** Emacs 配置
    在前面 Emacs 及各种模式安装完成后，最后做的是 Emacs 配置，Linux 和 Mac OSX 没有区别，还是通过目录软链接的方式，
    注意如果之前有 ~/.emacs.d 目录或者是 ~/.emacs 文件，备份一下，直接删掉，我所有的配置都在  [[https://github.com/bitorb/bitorb][bitorb 项目]] 中。
