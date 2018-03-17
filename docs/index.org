@@ -16,6 +16,7 @@
   + [[./system-thinkpad_dual.org][ThinkPad 笔记本双系统引导设置]]
   + [[./system-make_usb_installer.org][制作可引导的系统安装优盘]]
   + [[./system-debian_setup.org][Debian 基本设置]]
+  + [[./system-ssh_usage.org][SSH 命令使用]]
 
 - Emacs
   + [[./emacs-keybindings.org][Emacs 常用快捷键]]

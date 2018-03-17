@@ -1,0 +1,32 @@
+#+TITLE: ~ / 文档 / ssh 命令的使用
+#+AUTHOR: Tommy Wang
+#+OPTIONS: ^:nil
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" href="../css/org.css">
+
+* 外面的世界
+  命令行下使用免密码的证书连接到服务器，最好远端和本地都别用默认的端口，你懂的。
+#+BEGIN_EXAMPLE
+$ ssh -N -i ./id_rsa user@xxx.xxx.xxx.xxx -p port -D 127.0.0.1:xxxx
+#+END_EXAMPLE
+
+Mac 下可以通过系统偏好设置，让所有访问都走 SSH 通道。设置方法见最后的链接。
+如果在命令行使用 SOCKETS 访问，需要根据使用的软件单独设置。
+
+#+BEGIN_EXAMPLE
+# 如果用 git 通过 https 访问，使用下面的命令。
+$ git clone https://github.com/bitorb/bitorb-org.git --config 'http.proxy=socks5://127.0.0.1:xxxx'
+
+# 如果 git 访问，用的是 ssh 协议，需要配置 ~/.ssh/config，增加
+Host github.com
+ProxyCommand nc -X 5 -x 127.0.0.1:xxxx %h %p
+
+# 如果用 curl 命令.
+curl --socks5 localhost:xxxx "http://www.google.com"
+#+END_EXAMPLE
+
+参考文档：
++ https://itk.org/Wiki/Git/Trouble#Firewall_Blocks_Port_9418
++ https://stackoverflow.com/questions/5529218/how-to-use-git-behind-a-proxy
++ http://cms-sw.github.io/tutorial-proxy.html
++ http://meshfields.de/git-ssh-through-socks-proxy/

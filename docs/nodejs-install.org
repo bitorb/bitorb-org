@@ -4,13 +4,42 @@
 
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" href="../css/org.css">
 
-* Mac OSX 系统下的安装
+* Mac OSX 系统下通过 homebrew 的安装
   先确保已 [[./system-homebrew.org][安装 Homebrew]]，然后再安装 node.js。
 #+BEGIN_EXAMPLE
 $ brew install node
 #+END_EXAMPLE
 
+* 源码编译安装
+  Mac OSX 需要先安装最新版本的 XCODE 及 Command Line Tools。
+
+  然后下载源码，很大，最好开 SSH 加速。编译的时间很长，可以加 -j 参数来并行编译，-j4 表示 4个并发编译处理。
+#+BEGIN_EXAMPLE
+$ git clone https://github.com/nodejs/node.git  --config 'http.proxy=socks5://127.0.0.1:xxxx'
+$ cd node/
+$ git checkout v9.8.0
+$ ./configure --prefix=/usr/local/node/9.8.0
+$ make -j4
+$ sudo make install
+$ sudo ln -s /usr/local/node/9.8.0 /usr/local/node/default
+#+END_EXAMPLE
+
+参考文档
++ https://github.com/nodejs/node/wiki/Installation#building-prerequisites
+
+* 使用 npm 自我升级 npm
+  因为 npm 全局安装在 node 目录下，需要 sudo 来升级，但记得通过 env 加环境变量。
+#+BEGIN_EXAMPLE
+$ sudo env "PATH=$PATH:/usr/local/node/default/bin" npm i -g npm
+#+END_EXAMPLE
+
+参考文档
++ https://unix.stackexchange.com/questions/83191/how-to-make-sudo-preserve-path 
+
 * 使用 npm 进行其它软件包安装
 #+BEGIN_EXAMPLE
 $ npm install -g bower
 #+END_EXAMPLE
+
+参考文档：
++ https://github.com/nodejs/node/blob/master/BUILDING.md
