@@ -33,3 +33,6 @@
 
 - Nodejs
   + [[./nodejs-install.org][Nodejs 及相关软件的安装]]
+
+- Ruby
+  + [[./ruby-install.org][Ruby 及相关软件的安装]]

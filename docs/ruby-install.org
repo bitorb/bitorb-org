@@ -1,0 +1,38 @@
+#+TITLE: ~ / 文档 / Ruby 及相关软件的安装
+#+AUTHOR: Tommy Wang
+#+OPTIONS: ^:nil
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" href="../css/org.css">
+
+* Debian 下通过 rbenv 和 ruby-build 安装不同版本的 ruby
+  先安装编译 ruby 需要的依赖包，以及 clone rbenv 和 ruby-build 源码。
+#+BEGIN_EXAMPLE
+$ sudo apt-get update
+$ sudo apt-get install autoconf bison build-essential \
+libssl-dev libyaml-dev libreadline6-dev zlib1g-dev \
+libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
+
+$ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+
+$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+$ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+
+$ source ~/.bashrc
+$ type rbenv
+
+$ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+#+END_EXAMPLE
+安装 ruby 并使用 gem
+#+BEGIN_EXAMPLE
+$ rbenv install -l
+$ rbenv install 2.5.0
+$ rbenv global 2.5.0
+$ ruby -v
+
+$ gem install bundler
+#+END_EXAMPLE
+
+
+参考文档：
++ https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-debian-8
++ https://github.com/rbenv/rbenv
