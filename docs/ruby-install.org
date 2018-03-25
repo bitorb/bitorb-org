@@ -36,3 +36,18 @@ $ gem install bundler
 参考文档：
 + https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-debian-8
 + https://github.com/rbenv/rbenv
+
+* OSX 通过 rbenv 和 ruby-build 安装不同版本的 ruby
+  通过 homebrew 安装 rbenv 和 ruby-build。
+#+BEGIN_EXAMPLE
+$ brew install rbenv ruby-build
+$ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+$ source ~/.bashrc
+
+$ rbenv install -l
+$ rbenv install 2.5.0
+$ rbenv global 2.5.0
+$ ruby -v
+
+$ gem install bundler
+#+END_EXAMPLE
