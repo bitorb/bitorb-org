@@ -36,6 +36,15 @@ $ sudo chmod u+rwx /usr/local/src/
 $ hostnamectl set-hostname tomt60p.gaixie.org
 #+END_EXAMPLE
 
+** Debian Mate 环境变量
+   目前常用的 Linux 系统是 Debian，桌面用的 Mate，因为进入 X 不会加载 .bash_profile 文件，每次都手工 source 加载，很不方便。决定改一下，
+方法就是做一个 environment 文件，将 OSX 和 Linux 都会用到的环境变量设置放在这个文件里，但后在各自系统默认的配置文件以 source 方式加载，而不是之前的软链接的方式。
+Debian 桌面启动是默认会加载 ~/.bashrc 文件，所以使用下面的命令。
+#+BEGIN_EXAMPLE
+$ echo 'source ~/Projects/gaixie/bitorb/environment' >> ~/.bashrc
+#+END_EXAMPLE
+   参考文档：
+   + https://unix.stackexchange.com/questions/88106/why-doesnt-my-bash-profile-work
 * Mac OSX
 ** 修改显示的主机名
    不太喜欢 Mac 下 Terminal 窗口显示的主机名，如果是 MacBook Pro 我会用下面命令把它改为 tommbp.local，若不加
@@ -46,3 +55,11 @@ $ sudo scutil --set HostName tommbp.local
 #+END_EXAMPLE 
    参考文档：
    + [[http://apple.stackexchange.com/questions/66611/how-to-change-computer-name-so-terminal-displays-it-in-mac-os-x-mountain-lion][How to change computer name so terminal displays it in Mac OS X]]
+
+** 环境变量设置
+   和 Linux 下环境变量设置的方式一样，只不过 OSX 下加载的是 ~/.bash_profile 文件。
+#+BEGIN_EXAMPLE
+$ echo 'source ~/Projects/gaixie/bitorb/environment' >> ~/.bash_profile
+#+END_EXAMPLE
+   参考文档：
+   + https://apple.stackexchange.com/questions/119711/why-doesnt-mac-os-x-source-bashrc/119713

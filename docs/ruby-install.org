@@ -13,11 +13,9 @@ libssl-dev libyaml-dev libreadline6-dev zlib1g-dev \
 libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
 
 $ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-
-$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-$ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-
-$ source ~/.bashrc
+#+END_EXAMPLE
+环境变量的设置，通过加载 [[https://github.com/bitorb/bitorb/blob/master/environment][environment]] 文件，具体设置方法参考[[./system-setup.org][重装系统时的设置]]。
+#+BEGIN_EXAMPLE
 $ type rbenv
 
 $ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
@@ -41,9 +39,9 @@ $ gem install bundler
   通过 homebrew 安装 rbenv 和 ruby-build。
 #+BEGIN_EXAMPLE
 $ brew install rbenv ruby-build
-$ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-$ source ~/.bashrc
-
+#+END_EXAMPLE
+环境变量的设置，通过加载 [[https://github.com/bitorb/bitorb/blob/master/environment][environment]] 文件，具体设置方法参考[[./system-setup.org][重装系统时的设置]]。
+#+BEGIN_EXAMPLE
 $ rbenv install -l
 $ rbenv install 2.5.0
 $ rbenv global 2.5.0

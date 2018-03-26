@@ -65,15 +65,7 @@ $ sudo tar xzvf jdk-7u25-linux-x64.tar.gz
 $ sudo ln -sf /usr/java/jdk1.7.0_25/ /usr/java/default
 #+END_EXAMPLE
 
-  相关的环境变量如 JAVA_HOME 通过下面的软链接进行加载：
-#+BEGIN_EXAMPLE
-$ ln -sf ~/Projects/gaixie/bitorb/dot.bash_profile ~/.bash_profile
-#+END_EXAMPLE
-需要注意的是 Debian 下 .bash_profile 只能在 login shell 下被加载，也就是通过 CTRL+ALT+Fn 切换到交互式终端进行进行登录才会被加载。
-在图形界面的终端下需要手动加载：
-#+BEGIN_EXAMPLE
-$ source ~/.bash_profile
-#+END_EXAMPLE
+  相关的环境变量如 JAVA_HOME 单独环境变量文件加载，请参考[[./system-setup.org][重装系统时的设置]]。
 
   Mac OSX 下只需 [[http://www.oracle.com/technetwork/java/javase/downloads/index.html][官网下载]] 相应的 dmg 文件，然后按官方的安装教程进行安装，详细过程见参考文档。安装完成后，使用 java_home 命令运行其它的 JDK 版本：
 #+BEGIN_EXAMPLE
@@ -291,7 +283,7 @@ $ sudo mv ~/Downloads/docbook-xsl-ns-1.78.1 /usr/local/share/
 $ sudo ln -s /usr/local/share/docbook-xsl-ns-1.78.1 \
              /usr/local/share/docbook-xsl-ns
 #+END_EXAMPLE
-  最后设置环境变量 DOCBOOK_PATH，详见 [[https://github.com/bitorb/bitorb/blob/master/dot.bash_profile][~/.bash_profile]] 文件。
+  最后设置环境变量 DOCBOOK_PATH，详见 [[https://github.com/bitorb/bitorb/blob/master/environment][environment]] 文件，具体设置方法参考[[./system-setup.org][重装系统时的设置]]。
 
   如果要输出 html，好需要安装 xsltproc
 #+BEGIN_EXAMPLE
@@ -308,7 +300,7 @@ $ sudo tar xzvf apache-maven-3.2.1-bin.tar.gz
 $ sudo ln -sf /usr/local/maven/apache-maven-3.2.1 \
               /usr/local/maven/default
 #+END_EXAMPLE
-  然后设置环境变量 M2_HOME，详见 [[https://github.com/bitorb/bitorb/blob/master/dot.bash_profile][~/.bash_profile]] 文件。
+  然后设置环境变量 M2_HOME，详见 [[https://github.com/bitorb/bitorb/blob/master/environment][environment]] 文件，具体设置方法参考[[./system-setup.org][重装系统时的设置]]。
   最后如果要 deploy 到远程库，需要配置一个 settings.xml 文件，可以直接从 maven 的安装目录复制一个过来修改。
 #+BEGIN_EXAMPLE
 $ cp /usr/local/maven/default/conf/settings.xml ~/.m2/
@@ -332,7 +324,7 @@ $ vi ~/.m2/settings.xml
 #+END_EXAMPLE
 * Gradle
   Gradle 的安装配置和 Maven 一样，先从 [[http://www.gradle.org/downloads][官网下载]] 最新的安装文件。然后解压缩到指定目录。
-  做好软链接。环境变量 GRADLE_HOME，见 [[https://github.com/bitorb/bitorb/blob/master/dot.bash_profile][~/.bash_profile]] 文件。下面命令同时适用于 Mac OSX 和 Linux。
+  做好软链接。环境变量 GRADLE_HOME，详见 [[https://github.com/bitorb/bitorb/blob/master/environment][environment]] 文件，具体设置方法参考[[./system-setup.org][重装系统时的设置]]。下面命令同时适用于 Mac OSX 和 Linux。
 #+BEGIN_EXAMPLE
 $ sudo mkdir /usr/local/gradle
 $ sudo mv ~/Downloads/gradle-2.1-all.zip /usr/local/gradle/
