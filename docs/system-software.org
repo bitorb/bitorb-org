@@ -340,3 +340,11 @@ $ sudo ln -sf /usr/local/gradle/gradle-2.1 /usr/local/gradle/default
 #+BEGIN_EXAMPLE
 $ ln -sf ~/Projects/gaixie/bitorb/dot.vimrc ~/.vimrc
 #+END_EXAMPLE
+* Sphinx
+  Kernel 的官方文档工具，直接通过 pip 安装本地用户目录。Emacs 已经内置对 reStructuredText 模式的支持。
+#+BEGIN_EXAMPLE
+$ pip install --user sphinx
+#+END_EXAMPLE
+参考文档
++ https://stackoverflow.com/questions/38112756/how-do-i-access-packages-installed-by-pip-user
++ https://stackoverflow.com/questions/7143077/how-can-i-install-packages-in-my-home-folder-with-pip
