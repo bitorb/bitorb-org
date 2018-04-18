@@ -348,3 +348,5 @@ $ pip install --user sphinx
 参考文档
 + https://stackoverflow.com/questions/38112756/how-do-i-access-packages-installed-by-pip-user
 + https://stackoverflow.com/questions/7143077/how-can-i-install-packages-in-my-home-folder-with-pip
++ https://blog.csdn.net/xingwangc2014/article/details/52811177
++ https://github.com/yangbajing/sphinx-doc-starter

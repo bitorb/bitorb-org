@@ -1,0 +1,15 @@
+#+TITLE: ~ / 文档 / TeX 及相关软件的安装
+#+AUTHOR: Tommy Wang
+#+OPTIONS: ^:nil
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" href="../css/org.css">
+
+* OSX
+  直接安装 MacTeX 完全版，小硬盘可以选择下载 BasicTeX。下载后直接按照提示安装就行。
+  在通过 tlmgr 安装软件前需要先自己升级一下。
+#+BEGIN_EXAMPLE
+$ sudo tlmgr update --self
+#+END_EXAMPLE
+
+参考资料
++ http://www.tug.org/mactex/

@@ -36,3 +36,6 @@
 
 - Ruby
   + [[./ruby-install.org][Ruby 及相关软件的安装]]
+
+- TeX
+  + [[./tex-install.org][TeX 及相关软件的安装]]
