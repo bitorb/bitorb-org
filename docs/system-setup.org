@@ -31,10 +31,15 @@ $ sudo chmod u+rwx /usr/local/src/
 
 ** 使用 Google Noto 字体
    进入 [[https://www.google.com/get/noto/][Google Noto 字体官网]]，下载字体包，然后根据教程对不同的操作系统进行设置，很简单。对我来说，主要的目的是在各种系统下，生成的 pdf 文档风格统一美观。
-   或者单独下载中文字体文件包。
+   或者单独下载中文字体文件包，下面的 ttc 适用于 Mac OSX。
 #+BEGIN_EXAMPLE
 $ curl -O https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJK.ttc.zip
 $ curl -O https://noto-website-2.storage.googleapis.com/pkgs/NotoSerifCJK.ttc.zip
+#+END_EXAMPLE
+如果用的是 Debian 系统，虽然能加载 ttc，但通过 latex 调用字体时会报错，所以只能的单独下载 otf 文件。
+#+BEGIN_EXAMPLE
+$ curl -O https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKsc-hinted.zip
+$ curl -O https://noto-website-2.storage.googleapis.com/pkgs/NotoSerifCJKsc-hinted.zip
 #+END_EXAMPLE
 
 * Linux
