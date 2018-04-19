@@ -13,3 +13,12 @@ $ sudo tlmgr update --self
 
 参考资料
 + http://www.tug.org/mactex/
+
+* Debian
+  和 Mac 一样也分完整版和基本版，直接命令行安装完整版。
+#+BEGIN_EXAMPLE
+$ sudo apt-get install texlive-full
+#+END_EXAMPLE
+
+参考资料
++ https://milq.github.io/install-latex-ubuntu-debian/
