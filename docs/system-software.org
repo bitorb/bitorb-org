@@ -350,3 +350,4 @@ $ pip install --user sphinx
 + https://stackoverflow.com/questions/7143077/how-can-i-install-packages-in-my-home-folder-with-pip
 + https://blog.csdn.net/xingwangc2014/article/details/52811177
 + https://github.com/yangbajing/sphinx-doc-starter
++ https://groups.google.com/forum/#!topic/sphinx-users/xHXc5qem9QY
