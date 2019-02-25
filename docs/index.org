@@ -39,3 +39,6 @@
 
 - TeX
   + [[./tex-install.org][TeX 及相关软件的安装]]
+
+- Golang
+  + [[./golang-install.org][Golang 及相关软件的安装]]
