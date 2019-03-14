@@ -152,8 +152,8 @@ $ ln -sf ~/Projects/gaixie/bitorb/dot.gitconfig ~/.gitconfig
 #+BEGIN_EXAMPLE 
 $ sudo yum erase emacs
 $ cd /usr/local/src
-$ sudo wget http://mirror.bjtu.edu.cn/gnu/emacs/emacs-24.3.tar.gz
-$ sudo tar xzvf emacs-24.3.tar.gz 
+$ sudo wget https://mirrors.ustc.edu.cn/gnu/emacs/emacs-26.1.tar.gz
+$ sudo tar xzvf emacs-26.1.tar.gz
 #+END_EXAMPLE
    安装一些编译依赖的软件包，我目前使用的只是 Emacs 的大众功能，所以只要求能成功编译就行。
 #+BEGIN_EXAMPLE 
@@ -166,18 +166,18 @@ $ sudo yum install ncurses-devel
 
    Debian 8 下如果编译，需要安装下面的依赖包：
 #+BEGIN_EXAMPLE 
-$ sudo aptitude install build-essential libncurses5-dev autoconf
+$ sudo aptitude install build-essential libncurses5-dev autoconf libgnutls28-dev
 # x-win 支持
 $ sudo aptitude install xorg-dev libpng12-dev libjpeg8-dev libgif-dev libtiff5 libtiff5-dev
 #+END_EXAMPLE 
 
    下面进入解压缩后的源码目录，开始编译，安装，最后做一个执行文件的软链接。
 #+BEGIN_EXAMPLE 
-$ cd /usr/local/src/emacs-24.3
+$ cd /usr/local/src/emacs-26.1
 $ sudo mkdir /usr/local/emacs
-$ sudo ./configure --prefix=/usr/local/emacs/24.3
+$ sudo ./configure --prefix=/usr/local/emacs/26.1
 $ sudo make install
-$ sudo ln -sf /usr/local/emacs/24.3/bin/emacs /usr/local/bin/emacs
+$ sudo ln -sf /usr/local/emacs/26.1 /usr/local/emacs/default
 #+END_EXAMPLE
    以上是 Fedora 下 Emacs 编译安装过程，Mac OSX 我直接从 [[http://emacsformacosx.com/]] 下载最新的 dmg 文件安装。
    这个网站的版本更新相当及时，大家评价很高。
