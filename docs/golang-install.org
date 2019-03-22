@@ -1,4 +1,4 @@
-#+TITLE: ~ / 文档 / Nodejs 及相关软件的安装
+#+TITLE: ~ / 文档 / Golang 及相关软件的安装
 #+AUTHOR: Tommy Wang
 #+OPTIONS: ^:nil
 
